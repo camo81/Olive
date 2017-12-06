@@ -9,7 +9,7 @@
       <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="Your Mobotix password"/>
       <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (internal, with port)" />
       <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (external, with port)" />
-
+<Label Text="PENE!!!!! 8=D"
       <Button x:Name = "button1" Text="Salva i dati" Command="{Binding SaveSettings}" />
 
       <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />

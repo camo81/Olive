@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Olive.View.Settings">
+  <ScrollView>
+    <StackLayout>
+   
+      <Entry Text="{Binding Username}" Placeholder="Yuor Mobotix Username"/>
+      <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="Your Mobotix password"/>
+      <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (internal, with port)" />
+      <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (external, with port)" />
+
+      <Button x:Name = "button1" Text="Salva i dati" Command="{Binding SaveSettings}" />
+
+      <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />
+
+      <!-- <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+      
+    </StackLayout>
+
+
+  </ScrollView>
+
+</ContentPage>

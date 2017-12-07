@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Olive.View.MasterDetail"
+                  MasterBehavior="SplitOnLandscape">
+  <MasterDetailPage.Master>
+    <ContentPage BackgroundColor="#c6c6c6" Title="MasterPage">
+      <ContentPage.Content>
+        <StackLayout>
+          <Button Text="Main" Clicked="MenuHomePage" BackgroundColor="#3b5998"></Button>
+          <Button Text="Settings" Clicked="MenuSettings" BackgroundColor="#3b5998"></Button>
+        </StackLayout>
+      </ContentPage.Content>
+    </ContentPage>  
+  </MasterDetailPage.Master>
+
+  <MasterDetailPage.Detail>
+    <ContentPage>
+      <ContentPage.Content>
+        <StackLayout>
+        </StackLayout>
+      </ContentPage.Content>
+    </ContentPage>
+
+  </MasterDetailPage.Detail>
+  
+</MasterDetailPage>

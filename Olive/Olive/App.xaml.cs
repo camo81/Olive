@@ -14,7 +14,7 @@ namespace Olive
         {
             InitializeComponent();
             ManageData.CreaDataBase();
-            MainPage = new View.HomePage();
+            MainPage = new View.MasterDetail();
         }
 
         protected override void OnStart()

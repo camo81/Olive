@@ -59,6 +59,10 @@ namespace Olive.Model
             int i = database.Update(dati);
             return i;
         }
+
+        public static int delSettings() {
+            return database.DeleteAll<Settings>();
+        }
     }
 
 }

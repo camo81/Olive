@@ -5,12 +5,13 @@
   <ScrollView>
     <StackLayout>
    
-      <Entry Text="{Binding Username}" Placeholder="Yuor Mobotix Username"/>
-      <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="Your Mobotix password"/>
-      <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (internal, with port)" />
-      <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="Your Mobotix IP or domain (external, with port)" />
+      <Entry Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}"/>
+      <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="{Binding PasswordPlaceholder}"/>
+      <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="{Binding IpAddressPlaceholder}"/>
+      <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="{Binding IpAddressExtPlaceholder}" />
 
-      <Button x:Name = "button1" Text="Salva i dati" Command="{Binding SaveSettings}" />
+      <Button x:Name = "buttonIns" Text="{Binding SaveSettingsText}" Command="{Binding SaveSettings}" />
+      <Button x:Name = "buttonDel" Text="{Binding DelSettingsText}" Command="{Binding DelSettings}" />      
 
       <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />
 

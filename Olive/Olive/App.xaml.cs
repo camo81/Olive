@@ -13,6 +13,11 @@ namespace Olive
         public App()
         {
             InitializeComponent();
+            //setto la lingua di default dell'applicazione
+            System.Globalization.CultureInfo lingua = new System.Globalization.CultureInfo("en-GB");
+            //cerco se esiste un file resource con quella lingua nella cartella model, se non lo trova pesca il default
+            Traduzioni.Culture = lingua;
+            
             ManageData.CreaDataBase();
             MainPage = new View.MasterDetail();
         }

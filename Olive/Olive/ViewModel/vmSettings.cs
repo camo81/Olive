@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows.Input;
 using Olive.Model;
+using Acr.UserDialogs;
 
 namespace Olive.ViewModel
 {
@@ -22,6 +23,17 @@ namespace Olive.ViewModel
             }
         }
 
+        public String usernameplaceholder = Traduzioni.Settings_userPH;
+        public String UsernamePlaceholder
+        {
+            get { return usernameplaceholder; }
+            set
+            {
+                usernameplaceholder = value;
+                Set(nameof(UsernamePlaceholder), ref value);
+            }
+        }
+
         public String password;
         public String Password
         {
@@ -32,6 +44,18 @@ namespace Olive.ViewModel
                 Set(nameof(Password), ref value);
             }
         }
+
+        public String passwordplaceholder = Traduzioni.Settings_passPH;
+        public String PasswordPlaceholder
+        {
+            get { return passwordplaceholder; }
+            set
+            {
+                passwordplaceholder = value;
+                Set(nameof(PasswordPlaceholder), ref value);
+            }
+        }
+
 
         public String ipaddress;
         public String IpAddress
@@ -45,6 +69,18 @@ namespace Olive.ViewModel
         }
 
 
+        public String ipaddressplaceholder = Traduzioni.Settings_ipPH;
+        public String IpAddressPlaceholder
+        {
+            get { return ipaddressplaceholder; }
+            set
+            {
+                ipaddressplaceholder = value;
+                Set(nameof(IpAddressPlaceholder), ref value);
+            }
+        }
+
+
         public String ipaddressext;
         public String IpAddressExt
         {
@@ -53,6 +89,39 @@ namespace Olive.ViewModel
             {
                 ipaddressext = value;
                 Set(nameof(IpAddressExt), ref value);
+            }
+        }
+
+        public String ipaddressextplaceholder = Traduzioni.Settings_ipextPH;
+        public String IpAddressExtPlaceholder
+        {
+            get { return ipaddressextplaceholder; }
+            set
+            {
+                ipaddressextplaceholder = value;
+                Set(nameof(IpAddressExtPlaceholder), ref value);
+            }
+        }
+
+        public String savesettingstext = Traduzioni.Settings_SaveSettingsText;
+        public String SaveSettingsText
+        {
+            get { return savesettingstext; }
+            set
+            {
+                savesettingstext = value;
+                Set(nameof(SaveSettingsText), ref value);
+            }
+        }
+
+        public String delsettingstext = Traduzioni.Settings_DelSettingsText;
+        public String DelSettingsText
+        {
+            get { return delsettingstext; }
+            set
+            {
+                delsettingstext = value;
+                Set(nameof(DelSettingsText), ref value);
             }
         }
 
@@ -77,6 +146,15 @@ namespace Olive.ViewModel
 
         }
 
+
+        public ICommand DelSettings
+        {
+            get
+            {
+                return new RelayCommand(() => { DelSet(); });
+            }
+
+        }
         #endregion
         public void SaveSet()
         {
@@ -89,12 +167,12 @@ namespace Olive.ViewModel
             //verifico se esiste già un setting per Username
             var tmp = ManageData.getValue("Username");
 
-            if (tmp == null)
+            if ( (tmp == null) && (ValidateSettings(dati)) )
             {   
                 // se non esiste faccio l'insert
                 try
                 {
-                    var UserI = ManageData.InsertSettings(dati);
+                  var UserI = ManageData.InsertSettings(dati);                        
                 }
                 catch (Exception e)
                 {
@@ -102,9 +180,10 @@ namespace Olive.ViewModel
                 }
             }
             //altrimenti l'update
-            else {
+            else if (ValidateSettings(dati))
+            {
                 dati.IdSetting = tmp.IdSetting;
-                var i = ManageData.UpdateSettings(dati);
+                var i = ManageData.UpdateSettings(dati);                   
             }
 
 
@@ -115,20 +194,21 @@ namespace Olive.ViewModel
             
             tmp = ManageData.getValue("Password");
 
-            if (tmp == null)
+            if ( (tmp == null) && (ValidateSettings(dati)) )
             {
                 try
                 {
-                    var PassI = ManageData.InsertSettings(dati);
+                var Pass = ManageData.InsertSettings(dati);                    
                 }
                 catch (Exception e)
                 {
                     OpStatus = "" + e;
                 }
             }
-            else {
-                dati.IdSetting = tmp.IdSetting;
-                var i = ManageData.UpdateSettings(dati);
+            else if (ValidateSettings(dati))
+            {
+            dati.IdSetting = tmp.IdSetting;
+            var i = ManageData.UpdateSettings(dati);
             }
 
 
@@ -138,11 +218,11 @@ namespace Olive.ViewModel
 
             tmp = ManageData.getValue("IpAddress");
 
-            if (tmp == null)
+            if ( (tmp == null) && (ValidateSettings(dati)) )
             {
                 try
                 {
-                    var IPAI = ManageData.InsertSettings(dati);
+                var IPAI = ManageData.InsertSettings(dati);                  
                 }
                 catch (Exception e)
                 {
@@ -150,9 +230,10 @@ namespace Olive.ViewModel
                 }
 
             }
-            else {
-                dati.IdSetting = tmp.IdSetting;
-                var i = ManageData.UpdateSettings(dati);
+            else if (ValidateSettings(dati))
+            {
+            dati.IdSetting = tmp.IdSetting;
+            var i = ManageData.UpdateSettings(dati);                
             }
 
 
@@ -162,11 +243,11 @@ namespace Olive.ViewModel
 
             tmp = ManageData.getValue("IpAddressExt");
 
-            if (tmp == null)
+            if ( (tmp == null) && (ValidateSettings(dati)) )
             {
                 try
                 {
-                    var IPAIE = ManageData.InsertSettings(dati);
+                  var IPAIE = ManageData.InsertSettings(dati);                       
                 }
                 catch (Exception e)
                 {
@@ -174,7 +255,7 @@ namespace Olive.ViewModel
                 }
 
             }
-            else
+            else if (ValidateSettings(dati))
             {
                 dati.IdSetting = tmp.IdSetting;
                 var i = ManageData.UpdateSettings(dati);
@@ -182,6 +263,68 @@ namespace Olive.ViewModel
 
 
         }
+
+        public async void DelSet()
+        {
+            var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
+            {
+                Message = "Sicuro di voler cancellare i settings?",
+                OkText = "Sì",
+                CancelText = "No"
+            });
+            if (result)
+            {
+                ManageData.delSettings();
+                Username = Password = IpAddress = IpAddressExt = "";
+            }
+
+        }
+
+        public bool ValidateSettings(Settings dati)
+        {
+
+            switch (dati.SettingName)
+            {
+                case "Username":
+                    //OpStatus = "Username non valido";
+                    if (string.IsNullOrWhiteSpace(dati.SettingValue))
+                        {
+                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido ("+dati.SettingName+ ")" );
+                        return false;
+                        } 
+                    
+                    break;
+
+                case "Password":
+                    if (string.IsNullOrWhiteSpace(dati.SettingValue))
+                    {
+                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        return false;
+                    }
+                    break;
+
+                case "IpAddress":
+                    if (string.IsNullOrWhiteSpace(dati.SettingValue))
+                    {
+                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        return false;
+                    }
+                    break;
+
+                case "IpAddressExt":
+                    if (string.IsNullOrWhiteSpace(dati.SettingValue))
+                    {
+                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        return false;
+                    }
+                    break;
+            }
+
+
+            return true;
+
+        }
+
         #region ctor
         public vmSettings()
         {

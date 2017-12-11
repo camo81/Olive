@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Olive.Model;
+using Acr.UserDialogs;
+using System.Net;
 
 namespace Olive.ViewModel
 {
@@ -14,12 +16,12 @@ namespace Olive.ViewModel
     {
         #region binding
 
-        public String User;
+        public String Username;
         public String Password;
         public String IpAddress;
         public String IpAddressExt;
 
-        public String buttonactiontext = "Schiaccia il bottone per aprire il cancello";
+        public String buttonactiontext = Traduzioni.HomePage_Label1;
         public String ButtonActionText
         {
             get { return buttonactiontext; }
@@ -27,6 +29,17 @@ namespace Olive.ViewModel
             {
                 buttonactiontext = value;
                 Set(nameof(ButtonActionText), ref value);
+            }
+        }
+
+        public String buttontext = Traduzioni.HomePage_Button1;
+        public String ButtonText
+        {
+            get { return buttontext; }
+            set
+            {
+                buttontext = value;
+                Set(nameof(ButtonText), ref value);
             }
         }
 
@@ -42,16 +55,87 @@ namespace Olive.ViewModel
 
         public vmHomePage()
         {
-            User = ManageData.getValue("Username").SettingValue;
-            Password = ManageData.getValue("Password").SettingValue;
-            IpAddress = ManageData.getValue("IpAddress").SettingValue;
-            IpAddressExt = ManageData.getValue("IpAddressExt").SettingValue;
+            var tmp = ManageData.getValue("Username");
+            if (tmp == null)
+            {
+                Username = "";
+            }
+            else {
+                Username = tmp.SettingValue;
+            }
+
+
+            tmp = ManageData.getValue("Password");
+            if (tmp == null)
+            {
+                Password = "";
+            }
+            else
+            {
+                Password = tmp.SettingValue;
+            }
+
+
+            tmp = ManageData.getValue("IpAddress");
+            if (tmp == null)
+            {
+                IpAddress = "";
+            }
+            else
+            {
+                IpAddress = tmp.SettingValue;
+            }
+
+
+
+            tmp = ManageData.getValue("IpAddressExt");
+            if (tmp == null)
+            {
+                IpAddressExt = "";
+            }
+            else
+            {
+                IpAddressExt = tmp.SettingValue;
+            }
+
         }
 
         public int SendAction() {
 
 
-            ButtonActionText = "" + User + Password + IpAddress + IpAddressExt;
+            if ((string.IsNullOrWhiteSpace(Username)) || (string.IsNullOrWhiteSpace(Password)) || (string.IsNullOrWhiteSpace(IpAddress)) || (string.IsNullOrWhiteSpace(IpAddressExt)))
+            {
+                UserDialogs.Instance.ShowError("I dati sono incompleti, vai alla pagina settings");
+            }
+            else {
+                ButtonActionText = "" + Username + Password + IpAddress + IpAddressExt;
+
+                WebRequest call = WebRequest.Create(IpAddress);
+                /*
+                 
+                    string url = @"https://telematicoprova.agenziadogane.it/TelematicoServiziDiUtilitaWeb/ServiziDiUtilitaAutServlet?UC=22&SC=1&ST=2";
+                    WebRequest request = WebRequest.Create(url);
+                    request.Credentials = GetCredential();
+                    request.PreAuthenticate = true;
+                    and this is GetCredential()
+
+                    private CredentialCache GetCredential()
+                    {
+                        string url = @"https://telematicoprova.agenziadogane.it/TelematicoServiziDiUtilitaWeb/ServiziDiUtilitaAutServlet?UC=22&SC=1&ST=2";
+                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
+                        CredentialCache credentialCache = new CredentialCache();
+                        credentialCache.Add(new System.Uri(url), "Basic", new NetworkCredential(ConfigurationManager.AppSettings["ead_username"], ConfigurationManager.AppSettings["ead_password"]));
+                        return credentialCache;
+                    }
+
+
+            ALTRO SU 
+            https://stackoverflow.com/questions/4334521/httpwebrequest-using-basic-authentication
+             
+             */
+
+            }
+
 
 
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Olive.Model;
-
 using Xamarin.Forms;
 
 namespace Olive
@@ -14,11 +13,24 @@ namespace Olive
         {
             InitializeComponent();
             //setto la lingua di default dell'applicazione
-            System.Globalization.CultureInfo lingua = new System.Globalization.CultureInfo("en-GB");
-            //cerco se esiste un file resource con quella lingua nella cartella model, se non lo trova pesca il default
+            var currentLang = ManageData.getLang();
+            System.Globalization.CultureInfo lingua;
+            if (currentLang == null)
+            {
+                lingua = new System.Globalization.CultureInfo("en-GB");
+            }
+            else {
+                lingua = new System.Globalization.CultureInfo(currentLang.LangCode);
+            }
+
+            //cerca nei file di traduzione una con il culture info specificato, se non lo trova carica il default senza culture info
             Traduzioni.Culture = lingua;
-            
+
+
+
+
             ManageData.CreaDataBase();
+
             MainPage = new View.MasterDetail();
         }
 

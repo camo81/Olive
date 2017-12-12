@@ -13,6 +13,7 @@ using SQLite;
 using System.IO;
 using Xamarin.Forms;
 using Olive.Droid.DS;
+using Android.Database.Sqlite;
 
 [assembly: Dependency(typeof(ISqlLite_android))]
 
@@ -30,7 +31,10 @@ namespace Olive.Droid.DS
             // Return the database connection
             return conn;
         }
+
+
     }
 
 
-}
+
+    }

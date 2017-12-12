@@ -71,11 +71,47 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Error in settings, go to settings page.
+        /// </summary>
+        internal static string HomePage_buttonError {
+            get {
+                return ResourceManager.GetString("HomePage_buttonError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Press the button to open.
         /// </summary>
         internal static string HomePage_Label1 {
             get {
                 return ResourceManager.GetString("HomePage_Label1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a No.
+        /// </summary>
+        internal static string Setting_confirm_no {
+            get {
+                return ResourceManager.GetString("Setting_confirm_no", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Yes.
+        /// </summary>
+        internal static string Setting_confirm_yes {
+            get {
+                return ResourceManager.GetString("Setting_confirm_yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Are you sure to delete all entry?.
+        /// </summary>
+        internal static string Setting_confirmMessage {
+            get {
+                return ResourceManager.GetString("Setting_confirmMessage", resourceCulture);
             }
         }
         
@@ -89,7 +125,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a External IP address.
+        ///   Cerca una stringa localizzata simile a External IP address or domain.
         /// </summary>
         internal static string Settings_ipextPH {
             get {
@@ -98,7 +134,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Internal IP address.
+        ///   Cerca una stringa localizzata simile a Internal IP address or domain.
         /// </summary>
         internal static string Settings_ipPH {
             get {
@@ -130,6 +166,15 @@ namespace Olive.Model {
         internal static string Settings_userPH {
             get {
                 return ResourceManager.GetString("Settings_userPH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Entry {0} is not properly formatted.
+        /// </summary>
+        internal static string Settings_validationError {
+            get {
+                return ResourceManager.GetString("Settings_validationError", resourceCulture);
             }
         }
     }

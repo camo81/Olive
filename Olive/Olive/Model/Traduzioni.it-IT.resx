@@ -124,10 +124,10 @@
     <value>Schiaccia il bottone per aprire il cancello</value>
   </data>
   <data name="Settings_ipextPH" xml:space="preserve">
-    <value>IP address esterno</value>
+    <value>IP address esterno o dominio</value>
   </data>
   <data name="Settings_ipPH" xml:space="preserve">
-    <value>IP address interno</value>
+    <value>IP address interno o dominio</value>
   </data>
   <data name="Settings_passPH" xml:space="preserve">
     <value>La tua Password</value>
@@ -135,10 +135,25 @@
   <data name="Settings_userPH" xml:space="preserve">
     <value>Il tuo Username</value>
   </data>
+  <data name="HomePage_buttonError" xml:space="preserve">
+    <value>I dati sono incompleti, vai alla pagina settings</value>
+  </data>
   <data name="Settings_DelSettingsText" xml:space="preserve">
     <value>Elimina tutti i dati</value>
   </data>
   <data name="Settings_SaveSettingsText" xml:space="preserve">
     <value>Salva</value>
+  </data>
+  <data name="Settings_validationError" xml:space="preserve">
+    <value>Il valore {0} non è corretto</value>
+  </data>
+  <data name="Setting_confirmMessage" xml:space="preserve">
+    <value>Sei sicuro di cancellare tutti i dati?</value>
+  </data>
+  <data name="Setting_confirm_no" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Setting_confirm_yes" xml:space="preserve">
+    <value>Si</value>
   </data>
 </root>

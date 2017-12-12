@@ -105,7 +105,7 @@ namespace Olive.ViewModel
 
             if ((string.IsNullOrWhiteSpace(Username)) || (string.IsNullOrWhiteSpace(Password)) || (string.IsNullOrWhiteSpace(IpAddress)) || (string.IsNullOrWhiteSpace(IpAddressExt)))
             {
-                UserDialogs.Instance.ShowError("I dati sono incompleti, vai alla pagina settings");
+                UserDialogs.Instance.ShowError(Traduzioni.HomePage_buttonError);
             }
             else {
                 ButtonActionText = "" + Username + Password + IpAddress + IpAddressExt;

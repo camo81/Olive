@@ -28,17 +28,36 @@ namespace Olive.Model
         }
     }
 
+    public class Language
+    {
+        [PrimaryKey, AutoIncrement]
+        public int IdLanguage { get; set; }
+
+        [Unique]
+        public string LanguageName { get; set; }
+
+        [Unique]
+        public string LangCode { get; set; }
+
+
+        public override string ToString()
+        {
+            return string.Format("[Language: IdLanguage={0}, LanguageName={1}, LangCode{2}", IdLanguage, LanguageName, LangCode);
+        }
+    }
     public interface ISqlLite { SQLiteConnection getConnection(); }
 
     public static class ManageData
     {
         public const string TabellaSettings = "Settings";
+        public const string TabellaLanguage = "Language";
         static SQLiteConnection database = DependencyService.Get<ISqlLite>().getConnection();
 
 
         public static void CreaDataBase()
         {
             database.CreateTable<Settings>();
+            database.CreateTable<Language>();
         }
 
         public static int InsertSettings(Settings dati)
@@ -62,6 +81,24 @@ namespace Olive.Model
 
         public static int delSettings() {
             return database.DeleteAll<Settings>();
+        }
+
+        public static int delLanguage()
+        {
+            return database.DeleteAll<Language>();
+        }
+
+        public static int InsertLanguage(Language lang)
+        {
+            return database.Insert(lang);
+        }
+
+        public static Language getLang()
+        {
+
+            string query = $"SELECT * FROM [{TabellaLanguage}]";
+            var lista = database.Query<Language>(query);
+            return lista.FirstOrDefault();
         }
     }
 

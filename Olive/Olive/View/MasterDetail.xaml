@@ -7,6 +7,7 @@
         <StackLayout>
           <Button Text="Main" Clicked="MenuHomePage" BackgroundColor="#3b5998"></Button>
           <Button Text="Settings" Clicked="MenuSettings" BackgroundColor="#3b5998"></Button>
+          <Button Text="Language" Clicked="MenuLanguage" BackgroundColor="#3b5998"></Button>
         </StackLayout>
       </ContentPage.Content>
     </ContentPage>  

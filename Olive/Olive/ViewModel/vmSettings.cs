@@ -4,6 +4,7 @@ using System;
 using System.Windows.Input;
 using Olive.Model;
 using Acr.UserDialogs;
+using System.Text;
 
 namespace Olive.ViewModel
 {
@@ -136,7 +137,6 @@ namespace Olive.ViewModel
             }
         }
 
-
         public ICommand SaveSettings
         {
             get
@@ -268,9 +268,9 @@ namespace Olive.ViewModel
         {
             var result = await UserDialogs.Instance.ConfirmAsync(new ConfirmConfig
             {
-                Message = "Sicuro di voler cancellare i settings?",
-                OkText = "Sì",
-                CancelText = "No"
+                Message = Traduzioni.Setting_confirmMessage,
+                OkText = Traduzioni.Setting_confirm_yes,
+                CancelText = Traduzioni.Setting_confirm_no
             });
             if (result)
             {
@@ -289,7 +289,9 @@ namespace Olive.ViewModel
                     //OpStatus = "Username non valido";
                     if (string.IsNullOrWhiteSpace(dati.SettingValue))
                         {
-                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido ("+dati.SettingName+ ")" );
+                        var sbuild = new StringBuilder();
+                        var text = sbuild.AppendFormat(Traduzioni.Settings_validationError, dati.SettingName);
+                        UserDialogs.Instance.ShowError(""+text);
                         return false;
                         } 
                     
@@ -298,7 +300,9 @@ namespace Olive.ViewModel
                 case "Password":
                     if (string.IsNullOrWhiteSpace(dati.SettingValue))
                     {
-                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        var sbuild = new StringBuilder();
+                        var text = sbuild.AppendFormat(Traduzioni.Settings_validationError, dati.SettingName);
+                        UserDialogs.Instance.ShowError("" + text);
                         return false;
                     }
                     break;
@@ -306,7 +310,9 @@ namespace Olive.ViewModel
                 case "IpAddress":
                     if (string.IsNullOrWhiteSpace(dati.SettingValue))
                     {
-                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        var sbuild = new StringBuilder();
+                        var text = sbuild.AppendFormat(Traduzioni.Settings_validationError, dati.SettingName);
+                        UserDialogs.Instance.ShowError("" + text);
                         return false;
                     }
                     break;
@@ -314,7 +320,9 @@ namespace Olive.ViewModel
                 case "IpAddressExt":
                     if (string.IsNullOrWhiteSpace(dati.SettingValue))
                     {
-                        UserDialogs.Instance.ShowError("Uno dei parametri immessi non è valido (" + dati.SettingName + ")");
+                        var sbuild = new StringBuilder();
+                        var text = sbuild.AppendFormat(Traduzioni.Settings_validationError, dati.SettingName);
+                        UserDialogs.Instance.ShowError("" + text);
                         return false;
                     }
                     break;

@@ -156,4 +156,7 @@
   <data name="Setting_confirm_yes" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="Settings_httpvalidation" xml:space="preserve">
+    <value>Url must start with http or https</value>
+  </data>
 </root>

@@ -9,6 +9,8 @@ using System.Windows.Input;
 using Olive.Model;
 using Acr.UserDialogs;
 using System.Net;
+using Plugin.Connectivity;
+
 
 namespace Olive.ViewModel
 {
@@ -108,39 +110,17 @@ namespace Olive.ViewModel
                 UserDialogs.Instance.ShowError(Traduzioni.HomePage_buttonError);
             }
             else {
-                ButtonActionText = "" + Username + Password + IpAddress + IpAddressExt;
 
-                WebRequest call = WebRequest.Create(IpAddress);
-                /*
-                 
-                    string url = @"https://telematicoprova.agenziadogane.it/TelematicoServiziDiUtilitaWeb/ServiziDiUtilitaAutServlet?UC=22&SC=1&ST=2";
-                    WebRequest request = WebRequest.Create(url);
-                    request.Credentials = GetCredential();
-                    request.PreAuthenticate = true;
-                    and this is GetCredential()
-
-                    private CredentialCache GetCredential()
-                    {
-                        string url = @"https://telematicoprova.agenziadogane.it/TelematicoServiziDiUtilitaWeb/ServiziDiUtilitaAutServlet?UC=22&SC=1&ST=2";
-                        ServicePointManager.SecurityProtocol = SecurityProtocolType.Ssl3;
-                        CredentialCache credentialCache = new CredentialCache();
-                        credentialCache.Add(new System.Uri(url), "Basic", new NetworkCredential(ConfigurationManager.AppSettings["ead_username"], ConfigurationManager.AppSettings["ead_password"]));
-                        return credentialCache;
-                    }
-
-
-            ALTRO SU 
-            https://stackoverflow.com/questions/4334521/httpwebrequest-using-basic-authentication
-             
-             */
+                var IPA = Xamarin.Forms.DependencyService.Get<IWebRequest>().apriCancello(Username, Password, IpAddress, IpAddressExt);
+                ButtonText = IPA;
 
             }
 
 
-
-
-
             return 1;
         }
+
+        
+
     }
 }

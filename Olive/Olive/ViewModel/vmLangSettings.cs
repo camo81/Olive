@@ -8,6 +8,7 @@ using Olive.Model;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
 
+
 namespace Olive.ViewModel
 {
     public class vmLangSettings : ViewModelBase
@@ -116,5 +117,7 @@ namespace Olive.ViewModel
 
             return true;
         }
+
+
     }
 }

@@ -218,7 +218,7 @@ namespace Olive.ViewModel
 
             tmp = ManageData.getValue("IpAddress");
 
-            if ( (tmp == null) && (ValidateSettings(dati)) )
+            if ( (tmp == null) && (ValidateSettings(dati)) && startWithHttp(dati.SettingValue) )
             {
                 try
                 {
@@ -230,7 +230,7 @@ namespace Olive.ViewModel
                 }
 
             }
-            else if (ValidateSettings(dati))
+            else if ( (ValidateSettings(dati))  && startWithHttp(dati.SettingValue) )
             {
             dati.IdSetting = tmp.IdSetting;
             var i = ManageData.UpdateSettings(dati);                
@@ -243,7 +243,7 @@ namespace Olive.ViewModel
 
             tmp = ManageData.getValue("IpAddressExt");
 
-            if ( (tmp == null) && (ValidateSettings(dati)) )
+            if ( (tmp == null) && (ValidateSettings(dati)) && startWithHttp(dati.SettingValue))
             {
                 try
                 {
@@ -255,7 +255,7 @@ namespace Olive.ViewModel
                 }
 
             }
-            else if (ValidateSettings(dati))
+            else if ( (ValidateSettings(dati))  && startWithHttp(dati.SettingValue) )
             {
                 dati.IdSetting = tmp.IdSetting;
                 var i = ManageData.UpdateSettings(dati);
@@ -332,6 +332,26 @@ namespace Olive.ViewModel
             return true;
 
         }
+
+        public bool startWithHttp(string url)
+        {
+
+            int startIndex = 0;
+            int length = 4;
+
+            if (url.Substring(startIndex, length).ToLower() == "http") {
+                return true;
+            } else {
+                var text = Traduzioni.Settings_httpvalidation;
+                UserDialogs.Instance.ShowError(text);
+                return false;
+            }
+            
+
+            
+
+        }
+
 
         #region ctor
         public vmSettings()

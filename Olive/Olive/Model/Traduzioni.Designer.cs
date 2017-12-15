@@ -125,6 +125,15 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Url must start with http or https.
+        /// </summary>
+        internal static string Settings_httpvalidation {
+            get {
+                return ResourceManager.GetString("Settings_httpvalidation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a External IP address or domain.
         /// </summary>
         internal static string Settings_ipextPH {

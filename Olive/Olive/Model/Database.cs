@@ -45,6 +45,7 @@ namespace Olive.Model
             return string.Format("[Language: IdLanguage={0}, LanguageName={1}, LangCode{2}", IdLanguage, LanguageName, LangCode);
         }
     }
+
     public interface ISqlLite { SQLiteConnection getConnection(); }
 
     public static class ManageData

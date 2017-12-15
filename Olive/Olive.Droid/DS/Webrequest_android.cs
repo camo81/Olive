@@ -14,7 +14,7 @@ namespace Olive.Droid.DS
         {
             ///control/rcontrol?action=customfunction&action=sigout&profile=~LightToggle
             ///
-            string IPA = "";
+            string IPA = IpAddress;
             
             try
             {
@@ -28,8 +28,10 @@ namespace Olive.Droid.DS
             }
             catch (Exception e)
             {
-                IPA = IpAddress;
+                
             }
+
+            // TO DO: Sistema la logica(try per l'apertura). Metti nella pagina home lo stato della richieste l'errore nel caso in cui i 2 indirizzi sian sbaglaiti
 
             string urlServizio = $"{IPA}/control/rcontrol?action=customfunction&action=sigout&profile=~Door";
             CredentialCache cache = new CredentialCache();

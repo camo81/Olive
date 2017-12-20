@@ -8,7 +8,7 @@
     <StackLayout>
 
       <Label FontSize = "20" Text="{ Binding ButtonActionText }" />
-      <Button x:Name = "button2" Text="{ Binding ButtonText }" Command="{Binding CommandSendAction}" />
+      <Button x:homeButton = "button2" Text="{ Binding ButtonText }" Command="{Binding CommandSendAction}" Style="{StaticResource buttonStyle}" />
 
     </StackLayout>
 

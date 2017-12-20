@@ -159,4 +159,22 @@
   <data name="Settings_httpvalidation" xml:space="preserve">
     <value>L'indirizzo deve iniziare con http o https</value>
   </data>
+  <data name="HomePage_dnsError" xml:space="preserve">
+    <value>Errori nel raggiungere l'indirizzo di Mobotix. Controlla gli indirizzi nella pagina impostazioni</value>
+  </data>
+  <data name="HomePage_success" xml:space="preserve">
+    <value>Azione eseguita all'indirizzo {0}</value>
+  </data>
+  <data name="Language_pickerTitle" xml:space="preserve">
+    <value>Seleziona una lingua</value>
+  </data>
+  <data name="Language_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Settings_SaveSetKo" xml:space="preserve">
+    <value>Uno o più setting sono errati</value>
+  </data>
+  <data name="Settings_SaveSetOk" xml:space="preserve">
+    <value>Tutti i settings sono stati salvati</value>
+  </data>
 </root>

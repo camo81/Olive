@@ -80,11 +80,47 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Error reaching Mobotix url, update urls in setting page..
+        /// </summary>
+        internal static string HomePage_dnsError {
+            get {
+                return ResourceManager.GetString("HomePage_dnsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Press the button to open.
         /// </summary>
         internal static string HomePage_Label1 {
             get {
                 return ResourceManager.GetString("HomePage_Label1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Done on  {0}.
+        /// </summary>
+        internal static string HomePage_success {
+            get {
+                return ResourceManager.GetString("HomePage_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Choose a language.
+        /// </summary>
+        internal static string Language_pickerTitle {
+            get {
+                return ResourceManager.GetString("Language_pickerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Save.
+        /// </summary>
+        internal static string Language_save {
+            get {
+                return ResourceManager.GetString("Language_save", resourceCulture);
             }
         }
         
@@ -157,6 +193,24 @@ namespace Olive.Model {
         internal static string Settings_passPH {
             get {
                 return ResourceManager.GetString("Settings_passPH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a One or more settings are invalid.
+        /// </summary>
+        internal static string Settings_SaveSetKo {
+            get {
+                return ResourceManager.GetString("Settings_SaveSetKo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a All settings saved.
+        /// </summary>
+        internal static string Settings_SaveSetOk {
+            get {
+                return ResourceManager.GetString("Settings_SaveSetOk", resourceCulture);
             }
         }
         

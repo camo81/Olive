@@ -10,8 +10,8 @@
       <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="{Binding IpAddressPlaceholder}"/>
       <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="{Binding IpAddressExtPlaceholder}" />
 
-      <Button x:Name = "buttonIns" Text="{Binding SaveSettingsText}" Command="{Binding SaveSettings}" />
-      <Button x:Name = "buttonDel" Text="{Binding DelSettingsText}" Command="{Binding DelSettings}" />      
+      <Button x:Name = "buttonIns" Text="{Binding SaveSettingsText}" Command="{Binding SaveSettings}" Style="{StaticResource buttonStyle}"/>
+      <Button x:Name = "buttonDel" Text="{Binding DelSettingsText}" Command="{Binding DelSettings}" Style="{StaticResource buttonStyle}" />      
 
       <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />
 

@@ -2,13 +2,26 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Olive.View.MasterDetail"
                   MasterBehavior="SplitOnLandscape">
   <MasterDetailPage.Master>
-    <ContentPage BackgroundColor="#c6c6c6" Title="MasterPage">
+    <ContentPage BackgroundColor="#fff" Title="MasterPage">
       <ContentPage.Content>
-        <StackLayout>
-          <Button Text="Main" Clicked="MenuHomePage" BackgroundColor="#3b5998"></Button>
-          <Button Text="Settings" Clicked="MenuSettings" BackgroundColor="#3b5998"></Button>
-          <Button Text="Language" Clicked="MenuLanguage" BackgroundColor="#3b5998"></Button>
-        </StackLayout>
+        <StackLayout> 
+          <StackLayout BackgroundColor="#A1BF7A"
+                       HeightRequest="150">
+
+            <Label Text="Olive"
+                   FontSize="20"
+                   VerticalOptions="CenterAndExpand"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+
+          </StackLayout>
+        
+          <StackLayout>
+            <Button Text="Main" Clicked="MenuHomePage"  Style="{StaticResource MasterDetailButton}"></Button>
+            <Button Text="Settings" Clicked="MenuSettings"  Style="{StaticResource MasterDetailButton}"></Button>
+            <Button Text="Language" Clicked="MenuLanguage"  Style="{StaticResource MasterDetailButton}"></Button>
+          </StackLayout>
+        </StackLayout>  
       </ContentPage.Content>
     </ContentPage>  
   </MasterDetailPage.Master>

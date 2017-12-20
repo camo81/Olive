@@ -97,9 +97,18 @@ namespace Olive.Model
         public static Language getLang()
         {
 
-            string query = $"SELECT * FROM [{TabellaLanguage}]";
-            var lista = database.Query<Language>(query);
-            return lista.FirstOrDefault();
+            try
+            {
+                string query = $"SELECT * FROM [{TabellaLanguage}]";
+                var lista = database.Query<Language>(query);
+                return lista.FirstOrDefault();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
     }
 

@@ -12,6 +12,7 @@ namespace Olive
         public App()
         {
             InitializeComponent();
+            ManageData.CreaDataBase();
             //setto la lingua di default dell'applicazione
             var currentLang = ManageData.getLang();
             System.Globalization.CultureInfo lingua;
@@ -25,11 +26,6 @@ namespace Olive
 
             //cerca nei file di traduzione una con il culture info specificato, se non lo trova carica il default senza culture info
             Traduzioni.Culture = lingua;
-
-
-
-
-            ManageData.CreaDataBase();
 
             MainPage = new View.MasterDetail();
         }
@@ -50,3 +46,4 @@ namespace Olive
         }
     }
 }
+

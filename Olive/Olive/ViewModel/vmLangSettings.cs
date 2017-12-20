@@ -65,17 +65,50 @@ namespace Olive.ViewModel
                 Set(nameof(OpStatus), ref value);
             }
         }
+
+        public string pickertitle = Traduzioni.Language_pickerTitle;
+        public string pickerTitle
+        {
+            get { return pickertitle; }
+            set
+            {
+                pickertitle = value;
+                Set(nameof(pickerTitle), ref value);
+            }
+
+        }
+
+        public string savebutton = Traduzioni.Language_save;
+        public string saveButton
+        {
+            get { return savebutton; }
+            set
+            {
+                savebutton = value;
+                Set(nameof(saveButton), ref value);
+            }
+
+        }
         #endregion
+
 
         public vmLangSettings()
         {
-
             this.Lingue = new List<Lingue>();
             Lingue.Add(new Lingue { langCode = "en-GB", languageName = "English" });
             Lingue.Add(new Lingue { langCode = "it-IT", languageName = "Italian" });
 
-            var i = ManageData.getLang();
-            OpStatus = "--->:"+i.LanguageName;
+            try
+            {
+                var i = ManageData.getLang();
+                LangSelected = Lingue.Where(x => x.langCode == i.LangCode).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                //OpStatus = "Not set" + e;
+
+            }
+
 
         }
 
@@ -89,31 +122,15 @@ namespace Olive.ViewModel
             try
             {
                 op = ManageData.InsertLanguage(lingua);
+                Acr.UserDialogs.UserDialogs.Instance.ShowSuccess("");
+                var linguaCorrente = new System.Globalization.CultureInfo(lingua.LangCode);
+                Traduzioni.Culture = linguaCorrente;
             }
-            catch (Exception)
+            catch (Exception e)
             {
 
-                throw;
+                
             }
-
-
-            //OpStatus = ""+op;
-
-            
-/*
-            if (tmp == null) 
-            {
-                // se non esiste faccio l'insert
-                try
-                {
-                    var UserI = ManageData.InsertSettings(dati);
-                }
-                catch (Exception e)
-                {
-                    OpStatus = "" + e;
-                }
-            }*/
-
 
             return true;
         }

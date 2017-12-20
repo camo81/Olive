@@ -5,6 +5,7 @@ using System.Windows.Input;
 using Olive.Model;
 using Acr.UserDialogs;
 using System.Text;
+using System.Collections.Generic;
 
 namespace Olive.ViewModel
 {
@@ -156,6 +157,39 @@ namespace Olive.ViewModel
 
         }
         #endregion
+        
+        #region ctor
+        public vmSettings()
+        {
+            var tmp = ManageData.getValue("Username");
+
+            if (tmp != null)
+            {
+                Username = tmp.SettingValue;
+            }
+
+            tmp = ManageData.getValue("Password");
+
+            if (tmp != null)
+            {
+                Password = tmp.SettingValue;
+            }
+
+            tmp = ManageData.getValue("IpAddress");
+
+            if (tmp != null)
+            {
+                IpAddress = tmp.SettingValue;
+            }
+
+            tmp = ManageData.getValue("IpAddressExt");
+
+            if (tmp != null)
+            {
+                IpAddressExt = tmp.SettingValue;
+            }
+        }
+        #endregion
         public void SaveSet()
         {
             var dati = new Settings();
@@ -163,6 +197,7 @@ namespace Olive.ViewModel
             //set della variabile Username
             dati.SettingName = "Username";
             dati.SettingValue = Username;
+            int u = 0;
 
             //verifico se esiste già un setting per Username
             var tmp = ManageData.getValue("Username");
@@ -172,7 +207,7 @@ namespace Olive.ViewModel
                 // se non esiste faccio l'insert
                 try
                 {
-                  var UserI = ManageData.InsertSettings(dati);                        
+                  u = ManageData.InsertSettings(dati);                        
                 }
                 catch (Exception e)
                 {
@@ -183,7 +218,7 @@ namespace Olive.ViewModel
             else if (ValidateSettings(dati))
             {
                 dati.IdSetting = tmp.IdSetting;
-                var i = ManageData.UpdateSettings(dati);                   
+                u = ManageData.UpdateSettings(dati);                   
             }
 
 
@@ -191,6 +226,7 @@ namespace Olive.ViewModel
             //set della variabile Password
             dati.SettingName = "Password";
             dati.SettingValue = Password;
+            int p = 0;
             
             tmp = ManageData.getValue("Password");
 
@@ -198,7 +234,7 @@ namespace Olive.ViewModel
             {
                 try
                 {
-                var Pass = ManageData.InsertSettings(dati);                    
+                p = ManageData.InsertSettings(dati);                    
                 }
                 catch (Exception e)
                 {
@@ -208,59 +244,32 @@ namespace Olive.ViewModel
             else if (ValidateSettings(dati))
             {
             dati.IdSetting = tmp.IdSetting;
-            var i = ManageData.UpdateSettings(dati);
+            p = ManageData.UpdateSettings(dati);
             }
 
+            List<Settings> multi = new List<Settings>();
 
-            //set della variabile IPA
-            dati.SettingName = "IpAddress";
-            dati.SettingValue = IpAddress;
+            Settings AddressExt = new Settings();
+            AddressExt.SettingValue = IpAddressExt;
+            AddressExt.SettingName = "IpAddressExt";
+            //AddressExt.IdSetting = 1;
+            multi.Add(AddressExt);
 
-            tmp = ManageData.getValue("IpAddress");
+            Settings AddressInt = new Settings();
+            AddressInt.SettingValue = IpAddress;
+            AddressInt.SettingName = "IpAddress";
+            //AddressInt.IdSetting = 2;
+            multi.Add(AddressInt);
 
-            if ( (tmp == null) && (ValidateSettings(dati)) && startWithHttp(dati.SettingValue) )
+            var MultiSave = MultiValidateAndSave(multi);
+
+            if ((u != 0) && (p != 0) && (MultiSave.Count > 0) )
             {
-                try
-                {
-                var IPAI = ManageData.InsertSettings(dati);                  
-                }
-                catch (Exception e)
-                {
-                    OpStatus = "" + e;
-                }
-
+                UserDialogs.Instance.ShowSuccess(Traduzioni.Settings_SaveSetOk);
             }
-            else if ( (ValidateSettings(dati))  && startWithHttp(dati.SettingValue) )
-            {
-            dati.IdSetting = tmp.IdSetting;
-            var i = ManageData.UpdateSettings(dati);                
+            else {
+                UserDialogs.Instance.ShowError(Traduzioni.Settings_SaveSetKo);
             }
-
-
-            //set della variabile IPAEXT
-            dati.SettingName = "IpAddressExt";
-            dati.SettingValue = IpAddressExt;
-
-            tmp = ManageData.getValue("IpAddressExt");
-
-            if ( (tmp == null) && (ValidateSettings(dati)) && startWithHttp(dati.SettingValue))
-            {
-                try
-                {
-                  var IPAIE = ManageData.InsertSettings(dati);                       
-                }
-                catch (Exception e)
-                {
-                    OpStatus = "" + e;
-                }
-
-            }
-            else if ( (ValidateSettings(dati))  && startWithHttp(dati.SettingValue) )
-            {
-                dati.IdSetting = tmp.IdSetting;
-                var i = ManageData.UpdateSettings(dati);
-            }
-
 
         }
 
@@ -333,8 +342,59 @@ namespace Olive.ViewModel
 
         }
 
+        /*Presa una lista di n valori ne salva uno o più in base al fatto che esistta, in quella lista, alemno un item con un valore valido. 
+         * Se passo ip interno e ip esterno entrambi validi li salva entrambi, se passo uno valido e uno vuoto li salva entrambi.
+         * Se ne passo uno valido e uno no (non inizia con http) salva solo il primo.
+         * Se ne passo 2 invalidi o vuoti non salva nulla
+         */
+        public List<Settings> MultiValidateAndSave(List<Settings> dati)
+        {
+            List<Settings> Saved = new List<Settings>();
+            List<Settings> lista = new List<Settings>(dati);
+            lista.RemoveAll(item => string.IsNullOrWhiteSpace(item.SettingValue));
+            var i = lista.Count;
+
+            foreach (var item in dati)
+            {
+                if ( (lista.Count > 0) && ( (startWithHttp(item.SettingValue)) || ( string.IsNullOrWhiteSpace(item.SettingValue)) ) )
+                {
+                    
+                    var tmp = ManageData.getValue(item.SettingName);
+                    if (tmp == null)
+                    {
+                        try
+                        {
+                            ManageData.InsertSettings(item);
+                        }
+                        catch (Exception e)
+                        {
+                            OpStatus = "" + e;
+                        }
+                    }
+                    else
+                    {
+                        item.IdSetting = tmp.IdSetting;
+                        ManageData.UpdateSettings(item);
+                    }
+
+                    Saved.Add(item);
+                }
+                else {
+
+                }
+            }
+
+            return Saved;
+
+        }
+
         public bool startWithHttp(string url)
         {
+
+            if (string.IsNullOrWhiteSpace(url))
+            {
+                return false;
+            }
 
             int startIndex = 0;
             int length = 4;
@@ -353,37 +413,6 @@ namespace Olive.ViewModel
         }
 
 
-        #region ctor
-        public vmSettings()
-        {
-            var tmp = ManageData.getValue("Username");
 
-            if (tmp != null)
-            {
-                Username = tmp.SettingValue;
-            }
-
-            tmp = ManageData.getValue("Password");
-
-            if (tmp != null)
-            {
-                Password = tmp.SettingValue;
-            }
-
-            tmp = ManageData.getValue("IpAddress");
-
-            if (tmp != null)
-            {
-                IpAddress = tmp.SettingValue;
-            }
-
-            tmp = ManageData.getValue("IpAddressExt");
-
-            if (tmp != null)
-            {
-                IpAddressExt = tmp.SettingValue;
-            }
-        }
-        #endregion
     }
 }

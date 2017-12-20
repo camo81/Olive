@@ -10,46 +10,59 @@ namespace Olive.Droid.DS
 {
     class WebRequest_android : Olive.Model.IWebRequest
     {
-        public string apriCancello(string Username,string Password,string IpAddress,string IpAddressExt)
+        public string apriCancello(string Username,string Password, string IpAddress = "", string IpAddressExt="")
         {
             ///control/rcontrol?action=customfunction&action=sigout&profile=~LightToggle
             ///
             string IPA = IpAddress;
-            
-            try
-            {
-                var external = Dns.Resolve(IpAddressExt);
 
-                if (external != null)
+            if (! string.IsNullOrWhiteSpace(IpAddressExt))
+            {
+
+                try
                 {
-                    IPA = IpAddressExt;
+                string[] substrings = IpAddressExt.Split(':');
+                string[] domain = substrings[1].Split('/');
+                var external = Dns.Resolve(domain[2]);
+                IPA = IpAddressExt;
                 }
+                catch (Exception e)
+                {
 
+                }
             }
-            catch (Exception e)
+            
+           
+
+            if (! string.IsNullOrWhiteSpace(IPA) )
+
             {
+                string urlServizio = $"{IPA}/control/rcontrol?action=customfunction&action=sigout&profile=~Door";
+                CredentialCache cache = new CredentialCache();
+                // Create a request for the URL. 	
+
+                WebRequest request = WebRequest.Create(urlServizio);
+                // If required by the server, set the credentials.
+                NetworkCredential credenziali = new NetworkCredential(Username, Password);
+                cache.Add(new Uri(urlServizio), "Basic", credenziali);
+                request.Credentials = cache;
+
+                // Get the response.
+                try
+                {
+                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                    response.Close();
+                }
+                catch (Exception e)
+                {
+                    return "";
+                }
+                
+                
                 
             }
-
-            // TO DO: Sistema la logica(try per l'apertura). Metti nella pagina home lo stato della richieste l'errore nel caso in cui i 2 indirizzi sian sbaglaiti
-
-            string urlServizio = $"{IPA}/control/rcontrol?action=customfunction&action=sigout&profile=~Door";
-            CredentialCache cache = new CredentialCache();
-            // Create a request for the URL. 	
-
-            WebRequest request = WebRequest.Create(urlServizio);
-            // If required by the server, set the credentials.
-            NetworkCredential credenziali = new NetworkCredential(Username, Password);
-            cache.Add(new Uri(urlServizio), "Basic", credenziali);
-            request.Credentials = cache;
-
-            // Get the response.
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            response.Close();
-
-            
-
             return IPA;
+
 
         }
     }

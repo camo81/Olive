@@ -5,21 +5,22 @@
     <ContentPage BackgroundColor="#fff" Title="MasterPage">
       <ContentPage.Content>
         <StackLayout> 
-          <StackLayout BackgroundColor="#A1BF7A"
-                       HeightRequest="150">
-
-            <Label Text="Olive"
-                   FontSize="20"
-                   VerticalOptions="CenterAndExpand"
-                   TextColor="White"
-                   HorizontalOptions="Center"/>
+          <StackLayout Style ="{StaticResource MasterDetailSL1}">
+            <Image Source="menuBackgroud200.png" />
+            <!-- <Label Text="Olive" Style ="{StaticResource MasterDetailLb1}"/> -->
 
           </StackLayout>
         
-          <StackLayout>
-            <Button Text="Main" Clicked="MenuHomePage"  Style="{StaticResource MasterDetailButton}"></Button>
-            <Button Text="Settings" Clicked="MenuSettings"  Style="{StaticResource MasterDetailButton}"></Button>
-            <Button Text="Language" Clicked="MenuLanguage"  Style="{StaticResource MasterDetailButton}"></Button>
+          <StackLayout >
+            <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
+              <Image Source="ic_home_grey600_18dp.png" /> <Button Text="Main" Clicked="MenuHomePage"  Style="{StaticResource MasterDetailButton}"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
+              <Image Source="ic_settings_grey600_18dp.png" /><Button Text="Settings" Clicked="MenuSettings"  Style="{StaticResource MasterDetailButton}"></Button>
+            </StackLayout>  
+            <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
+              <Image Source="ic_web_grey600_18dp.png" /><Button Text="Language" Clicked="MenuLanguage"  Style="{StaticResource MasterDetailButton}"></Button>
+            </StackLayout>  
           </StackLayout>
         </StackLayout>  
       </ContentPage.Content>

@@ -7,10 +7,11 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Acr.UserDialogs;
+using Android.Graphics.Drawables;
 
 namespace Olive.Droid
 {
-    [Activity(Label = "Olive", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Olive", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
 
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
@@ -25,6 +26,14 @@ namespace Olive.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
             UserDialogs.Init(this);
+
+            //hide icon on bar for android < 5
+
+            /*if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
+            {
+                ActionBar.SetIcon(
+                  new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
+            }*/
         }
     }
 }

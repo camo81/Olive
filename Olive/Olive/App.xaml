@@ -24,8 +24,25 @@
         <Setter Property="BorderWidth" Value="5" />
         <Setter Property="WidthRequest" Value="200" />
         <Setter Property="TextColor" Value="#757575" />
-        <Setter Property="BackgroundColor" Value="#fff" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+      </Style>
+
+      <Style x:Key="MasterDetailSL1" TargetType="StackLayout">
+        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="BackgroundColor" Value="#62804B" />
+      </Style>
+
+
+      <Style x:Key="MasterDetailSL2" TargetType="StackLayout">
+        <Setter Property="HorizontalOptions" Value="Center" />
       </Style>      
+      
+      <Style x:Key="MasterDetailLb1" TargetType="Label">
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="VerticalOptions" Value="CenterAndExpand" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="HorizontalOptions" Value="Center" />        
+      </Style>
       
     </ResourceDictionary>
   </Application.Resources>

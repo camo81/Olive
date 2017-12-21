@@ -3,6 +3,7 @@ using System.Net;
 using Xamarin.Forms;
 using System;
 using Olive.Droid.DS;
+using System.Net.NetworkInformation;
 
 [assembly: Dependency(typeof(WebRequest_android))]
 
@@ -14,8 +15,24 @@ namespace Olive.Droid.DS
         {
             ///control/rcontrol?action=customfunction&action=sigout&profile=~LightToggle
             ///
-            string IPA = IpAddress;
 
+            string IPA = "";
+            try
+            {
+                var ping = new Ping();
+                string[] IpAddressClean = IpAddress.Split('/');
+                int i = 0;
+                i = i + 1;
+                PingReply reply = ping.Send(IpAddressClean[2]);
+                IPA = IpAddress;
+            }
+            catch (Exception e)
+            {
+
+                
+            }
+
+           
             if (! string.IsNullOrWhiteSpace(IpAddressExt))
             {
 

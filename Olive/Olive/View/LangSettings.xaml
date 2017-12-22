@@ -3,10 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Olive.View.LangSettings">
   <ScrollView>
-    <StackLayout>
+    <StackLayout Style="{StaticResource MasterDetailSLMain}">
       <Picker x:Name="Langselection" HorizontalOptions="FillAndExpand" 
               Title="{Binding pickerTitle}" ItemsSource="{Binding Lingue}" ItemDisplayBinding="{Binding languageName}"
-              SelectedItem="{Binding LangSelected}">
+              SelectedItem="{Binding LangSelected}"
+              Style="{StaticResource LanguagePicker}">
       </Picker>
       <!-- <Label Text="{Binding LangSelected.langCode}" /> -->
       <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />

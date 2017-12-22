@@ -27,13 +27,6 @@ namespace Olive.Droid
             LoadApplication(new App());
             UserDialogs.Init(this);
 
-            //hide icon on bar for android < 5
-
-            /*if ((int)Android.OS.Build.VERSION.SdkInt >= 21)
-            {
-                ActionBar.SetIcon(
-                  new ColorDrawable(Resources.GetColor(Android.Resource.Color.Transparent)));
-            }*/
         }
     }
 }

@@ -121,7 +121,7 @@
     <value>Apri</value>
   </data>
   <data name="HomePage_Label1" xml:space="preserve">
-    <value>Schiaccia il bottone per aprire il cancello</value>
+    <value>Schiaccia il bottone per aprire il cancello. In caso di problemi assicurarsi che i dati inseriti nella pagina impostazioni siano corretti.</value>
   </data>
   <data name="Settings_ipextPH" xml:space="preserve">
     <value>IP address esterno o dominio</value>
@@ -176,5 +176,11 @@
   </data>
   <data name="Settings_SaveSetOk" xml:space="preserve">
     <value>Tutti i settings sono stati salvati</value>
+  </data>
+  <data name="Settings_Description" xml:space="preserve">
+    <value>Inserisci i valori richiesti nel form sottostante. E' richiesto, oltre a username e password, almeno un indirizzo (a scelta tra interno o esterno) raggiungibile.</value>
+  </data>
+  <data name="Loading_message" xml:space="preserve">
+    <value>Faccio cose, vedo gente. | Lanciando coriandoli ... | Sto clonando la tua carta di credito | Sto formattando c:\ | Grazie Mario ma la principessa è in un altro castello | Round one, fight! | Chiedendomi cosa farebbe Piero Angela al posto mio ... | Scusa ma ieri mi sono sbronzato </value>
   </data>
 </root>

@@ -120,8 +120,35 @@
   <data name="HomePage_Button1" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="HomePage_buttonError" xml:space="preserve">
+    <value>Error in settings, go to settings page</value>
+  </data>
+  <data name="HomePage_dnsError" xml:space="preserve">
+    <value>Error reaching Mobotix url, update urls in setting page.</value>
+  </data>
   <data name="HomePage_Label1" xml:space="preserve">
-    <value>Press the button to open</value>
+    <value>Tap button to call your Mobotix cam. If you have issue check the values in settings page.</value>
+  </data>
+  <data name="HomePage_success" xml:space="preserve">
+    <value>Done on  {0}</value>
+  </data>
+  <data name="Language_pickerTitle" xml:space="preserve">
+    <value>Choose a language</value>
+  </data>
+  <data name="Language_save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Loading_message" xml:space="preserve">
+    <value>Making some stuff... | Round one, fight!</value>
+  </data>
+  <data name="Settings_DelSettingsText" xml:space="preserve">
+    <value>Delete all entry</value>
+  </data>
+  <data name="Settings_Description" xml:space="preserve">
+    <value>Insert settings in the form below. At least one reachable address (internal or external) is required</value>
+  </data>
+  <data name="Settings_httpvalidation" xml:space="preserve">
+    <value>Url must start with http or https</value>
   </data>
   <data name="Settings_ipextPH" xml:space="preserve">
     <value>External IP address or domain</value>
@@ -132,17 +159,17 @@
   <data name="Settings_passPH" xml:space="preserve">
     <value>Your Password</value>
   </data>
-  <data name="Settings_userPH" xml:space="preserve">
-    <value>Your Username</value>
+  <data name="Settings_SaveSetKo" xml:space="preserve">
+    <value>One or more settings are invalid</value>
   </data>
-  <data name="HomePage_buttonError" xml:space="preserve">
-    <value>Error in settings, go to settings page</value>
-  </data>
-  <data name="Settings_DelSettingsText" xml:space="preserve">
-    <value>Delete all entry</value>
+  <data name="Settings_SaveSetOk" xml:space="preserve">
+    <value>All settings saved</value>
   </data>
   <data name="Settings_SaveSettingsText" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Settings_userPH" xml:space="preserve">
+    <value>Your Username</value>
   </data>
   <data name="Settings_validationError" xml:space="preserve">
     <value>Entry {0} is not properly formatted</value>
@@ -155,26 +182,5 @@
   </data>
   <data name="Setting_confirm_yes" xml:space="preserve">
     <value>Yes</value>
-  </data>
-  <data name="Settings_httpvalidation" xml:space="preserve">
-    <value>Url must start with http or https</value>
-  </data>
-  <data name="HomePage_dnsError" xml:space="preserve">
-    <value>Error reaching Mobotix url, update urls in setting page.</value>
-  </data>
-  <data name="HomePage_success" xml:space="preserve">
-    <value>Done on  {0}</value>
-  </data>
-  <data name="Language_pickerTitle" xml:space="preserve">
-    <value>Choose a language</value>
-  </data>
-  <data name="Language_save" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="Settings_SaveSetKo" xml:space="preserve">
-    <value>One or more settings are invalid</value>
-  </data>
-  <data name="Settings_SaveSetOk" xml:space="preserve">
-    <value>All settings saved</value>
   </data>
 </root>

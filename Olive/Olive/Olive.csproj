@@ -38,6 +38,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\ButtonWithoutShadow.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Lingue.cs" />
     <Compile Include="Model\Traduzioni.Designer.cs">

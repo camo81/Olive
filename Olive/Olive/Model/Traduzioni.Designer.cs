@@ -89,7 +89,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Press the button to open.
+        ///   Cerca una stringa localizzata simile a Tap button to call your Mobotix cam. If you have issue check the values in settings page..
         /// </summary>
         internal static string HomePage_Label1 {
             get {
@@ -121,6 +121,15 @@ namespace Olive.Model {
         internal static string Language_save {
             get {
                 return ResourceManager.GetString("Language_save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Making some stuff... | Round one, fight!.
+        /// </summary>
+        internal static string Loading_message {
+            get {
+                return ResourceManager.GetString("Loading_message", resourceCulture);
             }
         }
         
@@ -157,6 +166,15 @@ namespace Olive.Model {
         internal static string Settings_DelSettingsText {
             get {
                 return ResourceManager.GetString("Settings_DelSettingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Insert settings in the form below. At least one reachable address (internal or external) is required.
+        /// </summary>
+        internal static string Settings_Description {
+            get {
+                return ResourceManager.GetString("Settings_Description", resourceCulture);
             }
         }
         

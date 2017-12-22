@@ -9,40 +9,63 @@
       <Style x:Key="buttonStyle" TargetType="Button">
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="VerticalOptions" Value="Center" />
-        <Setter Property="BorderColor" Value="#62804B" />
+        <Setter Property="BorderColor" Value="#0E2C14" />
         <Setter Property="BorderRadius" Value="5" />
         <Setter Property="BorderWidth" Value="5" />
         <Setter Property="WidthRequest" Value="200" />
         <Setter Property="TextColor" Value="#" />
+        <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />        
       </Style>
       
       <Style x:Key="MasterDetailButton" TargetType="Button">
         <Setter Property="HorizontalOptions" Value="Fill" />
-        <Setter Property="VerticalOptions" Value="Center" />
-        <Setter Property="BorderColor" Value="#A1BF7A" />
-        <Setter Property="BorderRadius" Value="5" />
-        <Setter Property="BorderWidth" Value="5" />
-        <Setter Property="WidthRequest" Value="200" />
+        <Setter Property="BorderColor" Value="#fff" />
+        <Setter Property="BorderRadius" Value="0" />
+        <Setter Property="BorderWidth" Value="0" />
         <Setter Property="TextColor" Value="#757575" />
-        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="#fff" />
+        <Setter Property="FontSize" Value="17" />        
+        <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
+        <Setter Property="Margin" Value="0,0,0,0" />
       </Style>
-
+      
       <Style x:Key="MasterDetailSL1" TargetType="StackLayout">
         <Setter Property="HeightRequest" Value="200" />
-        <Setter Property="BackgroundColor" Value="#62804B" />
+        <Setter Property="BackgroundColor" Value="#0E2C14" />        
       </Style>
 
 
       <Style x:Key="MasterDetailSL2" TargetType="StackLayout">
-        <Setter Property="HorizontalOptions" Value="Center" />
-      </Style>      
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="Padding" Value="40,10,0,0" />
+      </Style>
+
+      <Style x:Key="MasterDetailSLMain" TargetType="StackLayout">
+        <Setter Property="Padding" Value="40,40,40,40" />
+      </Style>
       
+
       <Style x:Key="MasterDetailLb1" TargetType="Label">
-        <Setter Property="FontSize" Value="26" />
+        <Setter Property="FontSize" Value="110" />
         <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         <Setter Property="TextColor" Value="White" />
-        <Setter Property="HorizontalOptions" Value="Center" />        
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="FontFamily" Value="IMissYourKiss.ttf#IMissYourKiss" />
       </Style>
+      
+      <Style x:Key="SettingsEntry" TargetType="Entry">
+        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
+      </Style>
+
+      <Style x:Key="LanguagePicker" TargetType="Picker">
+        <Setter Property="Margin" Value="0,0,0,10" />
+      </Style>
+
+      <Style x:Key="DescriptionLabel" TargetType="Label">
+        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
+      </Style>      
       
     </ResourceDictionary>
   </Application.Resources>

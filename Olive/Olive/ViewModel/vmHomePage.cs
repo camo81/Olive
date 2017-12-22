@@ -103,25 +103,30 @@ namespace Olive.ViewModel
         }
 
         public int SendAction() {
-
-
+            string message = idiotMessage();
+            UserDialogs.Instance.ShowLoading(message, MaskType.Black);
+            
             if ( (string.IsNullOrWhiteSpace(Username)) || (string.IsNullOrWhiteSpace(Password)) || 
                  ( (string.IsNullOrWhiteSpace(IpAddress)) && (string.IsNullOrWhiteSpace(IpAddressExt))  ) )
             {
+                UserDialogs.Instance.HideLoading();
                 UserDialogs.Instance.ShowError(Traduzioni.HomePage_buttonError);
             }
             else {
 
+                
                 var IPA = Xamarin.Forms.DependencyService.Get<IWebRequest>().apriCancello(Username, Password, IpAddress, IpAddressExt);
-
+                
                 if (IPA != "")
                 {
                     //ButtonText = IPA;
                     var sbuild = new StringBuilder();
                     var text = sbuild.AppendFormat(Traduzioni.HomePage_success, IPA);
+                    UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.ShowSuccess("" + text);
                 }
                 else {
+                    UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.ShowError(Traduzioni.HomePage_dnsError);
                 }
 
@@ -130,11 +135,18 @@ namespace Olive.ViewModel
 
             }
 
-
+           
             return 1;
         }
 
-        
+        public string idiotMessage() {
+            var messages = Traduzioni.Loading_message;
+            string[] messageList = messages.Split('|');
+            var rnd = new Random();
+            var message = messageList[rnd.Next(0, messageList.Length)];
+
+            return message;
+        }
 
     }
 }

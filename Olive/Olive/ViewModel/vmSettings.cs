@@ -14,6 +14,21 @@ namespace Olive.ViewModel
 
         #region binding 
 
+
+        public string description = Traduzioni.Settings_Description;
+        public String Description
+        {
+            get { return description; }
+            set
+            {
+                description = value;
+                Set(nameof(Description), ref value);
+            }
+        }
+        
+
+
+
         public String username;
         public String Username
         {
@@ -356,6 +371,9 @@ namespace Olive.ViewModel
 
             foreach (var item in dati)
             {
+                bool iss = startWithHttp(item.SettingValue);
+                var p = string.IsNullOrWhiteSpace(item.SettingValue);
+
                 if ( (lista.Count > 0) && ( (startWithHttp(item.SettingValue)) || ( string.IsNullOrWhiteSpace(item.SettingValue)) ) )
                 {
                     
@@ -384,6 +402,14 @@ namespace Olive.ViewModel
                 }
             }
 
+
+            //Se ho come ritorno solo un elemento verifico che non sia vuoto e in caso lo cancello. 
+            /*Questo succede quando  faccio l'update dei due campi, di cui uno è vuoto e quello nuovamente inserrito è sbagliato (esemlio, scrivo htp invece che http)*/
+            if (Saved.Count == 1)
+            {
+                Saved.RemoveAll(item => string.IsNullOrWhiteSpace(item.SettingValue));
+            }
+
             return Saved;
 
         }
@@ -391,15 +417,17 @@ namespace Olive.ViewModel
         public bool startWithHttp(string url)
         {
 
-            if (string.IsNullOrWhiteSpace(url))
+            if ( (string.IsNullOrWhiteSpace(url)) || (url.Length < 11) )
             {
                 return false;
             }
 
             int startIndex = 0;
-            int length = 4;
+            int length = 7;
 
-            if (url.Substring(startIndex, length).ToLower() == "http") {
+            var pippo = url.Substring(startIndex, length).ToLower();
+
+            if ( (url.Substring(startIndex, length).ToLower() == "http://") || (url.Substring(startIndex, length+1).ToLower() == "https://") ) {
                 return true;
             } else {
                 var text = Traduzioni.Settings_httpvalidation;

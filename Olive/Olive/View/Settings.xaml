@@ -3,12 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Olive.View.Settings" Title="Settings">
   <ScrollView>
-    <StackLayout>
-   
-      <Entry Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}"/>
-      <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="{Binding PasswordPlaceholder}"/>
-      <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="{Binding IpAddressPlaceholder}"/>
-      <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="{Binding IpAddressExtPlaceholder}" />
+    <StackLayout Style="{StaticResource MasterDetailSLMain}">
+
+      <Label Text="{ Binding Description }" Style="{StaticResource DescriptionLabel}" />
+
+      <Entry Text="{Binding Username}" Placeholder="{Binding UsernamePlaceholder}" Style="{StaticResource SettingsEntry}"/>
+      <Entry IsPassword="true" Text="{Binding Password , Mode=TwoWay}" Placeholder="{Binding PasswordPlaceholder}" Style="{StaticResource SettingsEntry}"/>
+      <Entry Text="{Binding IpAddress , Mode=TwoWay}" Placeholder="{Binding IpAddressPlaceholder}" Style="{StaticResource SettingsEntry}"/>
+      <Entry Text="{Binding IpAddressExt , Mode=TwoWay}" Placeholder="{Binding IpAddressExtPlaceholder}" Style="{StaticResource SettingsEntry}" />
 
       <Button x:Name = "buttonIns" Text="{Binding SaveSettingsText}" Command="{Binding SaveSettings}" Style="{StaticResource buttonStyle}"/>
       <Button x:Name = "buttonDel" Text="{Binding DelSettingsText}" Command="{Binding DelSettings}" Style="{StaticResource buttonStyle}" />      

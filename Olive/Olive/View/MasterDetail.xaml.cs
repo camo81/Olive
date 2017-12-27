@@ -29,5 +29,10 @@ namespace Olive.View
             Detail = new NavigationPage(new LangSettings());
             IsPresented = false;
         }
+        void MenuAbout(object sender, EventArgs e)
+        {
+            Detail = new NavigationPage(new About());
+            IsPresented = false;
+        }
     }
 }

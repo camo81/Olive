@@ -62,6 +62,24 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Olive app v1.0.
+        /// </summary>
+        internal static string About_heading {
+            get {
+                return ResourceManager.GetString("About_heading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a some text.
+        /// </summary>
+        internal static string About_text {
+            get {
+                return ResourceManager.GetString("About_text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Open.
         /// </summary>
         internal static string HomePage_Button1 {

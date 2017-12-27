@@ -183,4 +183,10 @@
   <data name="Setting_confirm_yes" xml:space="preserve">
     <value>Yes</value>
   </data>
+  <data name="About_heading" xml:space="preserve">
+    <value>Olive app v1.0</value>
+  </data>
+  <data name="About_text" xml:space="preserve">
+    <value>some text</value>
+  </data>
 </root>

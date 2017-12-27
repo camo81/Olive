@@ -183,4 +183,10 @@
   <data name="Loading_message" xml:space="preserve">
     <value>Faccio cose, vedo gente. | Lanciando coriandoli ... | Sto clonando la tua carta di credito | Sto formattando c:\ | Grazie Mario ma la principessa è in un altro castello | Round one, fight! | Chiedendomi cosa farebbe Piero Angela al posto mio ... | Scusa ma ieri mi sono sbronzato </value>
   </data>
+  <data name="About_heading" xml:space="preserve">
+    <value>Olive app v1.0</value>
+  </data>
+  <data name="About_text" xml:space="preserve">
+    <value>Olive app è fatta col &lt;3 da Carlo Camagni e Davide Motti. L'applicazione è sviluppata in c# tramite Xamarin ed il codice è liberamente scaricabile da http://gitlab.consortech.it:8080/explore/projects. Siete liberi di scaricarla, modificarla, romperla, abbellirla e  imbruttirla. Grazie a material design icons (https://materialdesignicons.com/) per le icone, Pixabay (https://pixabay.com/it/) e tutta la community di xamarin che ha reso possibile lo sviluppo. E a Olivia, il nome dell' app è dedicato a te. </value>
+  </data>
 </root>

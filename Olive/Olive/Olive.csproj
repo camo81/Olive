@@ -53,10 +53,14 @@
     </Compile>
     <Compile Include="Model\WebRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\vmAbout.cs" />
     <Compile Include="ViewModel\vmHomePage.cs" />
     <Compile Include="ViewModel\vmLangSettings.cs" />
     <Compile Include="ViewModel\vmMasterDetail.cs" />
     <Compile Include="ViewModel\vmSettings.cs" />
+    <Compile Include="View\About.xaml.cs">
+      <DependentUpon>About.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -180,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="View\LangSettings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="View\About.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

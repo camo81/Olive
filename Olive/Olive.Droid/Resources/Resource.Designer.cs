@@ -2969,10 +2969,10 @@ namespace Olive.Droid
 			public const int icon = 2130837811;
 			
 			// aapt resource value: 0x7f020134
-			public const int menuBackgroud = 2130837812;
+			public const int menuBackgroud200 = 2130837812;
 			
 			// aapt resource value: 0x7f020135
-			public const int menuBackgroud200 = 2130837813;
+			public const int menuBackground = 2130837813;
 			
 			// aapt resource value: 0x7f020136
 			public const int mr_button_connected_dark = 2130837814;

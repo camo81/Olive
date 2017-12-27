@@ -43,7 +43,7 @@
       </Style>
       
       <Style x:Key="MasterDetailSL1" TargetType="StackLayout">
-        <Setter Property="HeightRequest" Value="200" />
+        <Setter Property="HeightRequest" Value="160" />
         <Setter Property="BackgroundColor" Value="#0E2C14" />
       </Style>
 
@@ -70,6 +70,8 @@
         <Setter Property="TextColor" Value="White" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="FontFamily" Value="IMissYourKiss.ttf#IMissYourKiss" />
+        <Setter Property="Margin" Value="40,10,40,40" />
+        
       </Style>
       
       <Style x:Key="SettingsEntry" TargetType="Entry">
@@ -82,7 +84,7 @@
       </Style>
 
       <Style x:Key="DescriptionLabel" TargetType="Label">
-        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="Margin" Value="0,0,0,40" />
         <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
       </Style>      
       

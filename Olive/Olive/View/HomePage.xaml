@@ -1,17 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Olive.View.HomePage" Title="Home Page">
+             x:Class="Olive.View.HomePage" Title="Home Page"
+             xmlns:customs="clr-namespace:Olive.Model;assembly=Olive">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Name="Info" Order="Secondary" Priority="0" />
+  </ContentPage.ToolbarItems>
 
 
-  <ScrollView>
+  <ScrollView Style="{StaticResource MasterDetailSVMain}">
+    
+    <StackLayout>
+    
     <StackLayout Style="{StaticResource MasterDetailSLMain}">
 
-      <Label Text="{ Binding ButtonActionText }" Style="{StaticResource DescriptionLabel}" />
-      <Button x:homeButton = "button2" Text="{ Binding ButtonText }" Command="{Binding CommandSendAction}" Style="{StaticResource buttonStyle}" />
+      <Label Text="{ Binding ButtonActionText }" Style="{StaticResource DescriptionLabel}" >
 
+      </Label>
+      <customs:ButtonWithoutShadow x:homeButton = "button2" Image="ic_gate_white_36dp.png" Command="{Binding CommandSendAction}" Style="{StaticResource buttonOnlyIcon}" />
+      
     </StackLayout>
-
+    
+    </StackLayout>
 
   </ScrollView>
 

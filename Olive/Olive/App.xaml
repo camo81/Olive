@@ -86,8 +86,13 @@
       <Style x:Key="DescriptionLabel" TargetType="Label">
         <Setter Property="Margin" Value="0,0,0,40" />
         <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
-      </Style>      
+      </Style>
+
+      <Style x:Key="toolbarSecondary" TargetType="ToolbarItem">
       
+      </Style>
+      
+
     </ResourceDictionary>
   </Application.Resources>
 </Application>

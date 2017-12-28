@@ -189,4 +189,16 @@
   <data name="About_text" xml:space="preserve">
     <value>some text</value>
   </data>
+  <data name="MasterAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="MasterLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="MasterMain" xml:space="preserve">
+    <value>Main Page</value>
+  </data>
+  <data name="MasterSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

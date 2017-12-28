@@ -10,7 +10,7 @@ using Olive.Model;
 using Acr.UserDialogs;
 using System.Net;
 using Plugin.Connectivity;
-
+using Olive.FunzioniComuni;
 
 namespace Olive.ViewModel
 {
@@ -51,6 +51,16 @@ namespace Olive.ViewModel
             {
                 return new RelayCommand(() => { SendAction(); });
             }
+
+        }
+
+        public ICommand gotoPage
+        {
+            get
+            {
+                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+            }
+
 
         }
         #endregion

@@ -4,7 +4,6 @@
              x:Class="Olive.View.About">
   <ContentPage.ToolbarItems>
     <ToolbarItem Icon="ic_check_white_36dp.png" Command="{Binding SaveSettings}"/>
-    <ToolbarItem Name="Info" Order="Secondary" Priority="0" Command="{Binding DelSettings}" />
   </ContentPage.ToolbarItems>
 
   <ScrollView Style="{StaticResource MasterDetailSVMain}">

@@ -4,7 +4,7 @@
              x:Class="Olive.View.LangSettings">
   <ContentPage.ToolbarItems>
     <ToolbarItem Icon="ic_check_white_36dp.png" Command="{Binding SaveLanguage}"></ToolbarItem>
-    <ToolbarItem Name="Info" Order="Secondary" Priority="0" />
+    <ToolbarItem Name="About" Order="Secondary" Priority="0" Command="{Binding gotoPage}" />
   </ContentPage.ToolbarItems>
   <ScrollView Style="{StaticResource MasterDetailSVMain}">
     <StackLayout>

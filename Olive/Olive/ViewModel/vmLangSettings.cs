@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Olive.Model;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;
-
+using Olive.FunzioniComuni;
 
 namespace Olive.ViewModel
 {
@@ -52,6 +52,16 @@ namespace Olive.ViewModel
             {
                 return new RelayCommand(() => { SaveLang(); });
             }
+
+        }
+
+        public ICommand gotoPage
+        {
+            get
+            {
+                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+            }
+
 
         }
 

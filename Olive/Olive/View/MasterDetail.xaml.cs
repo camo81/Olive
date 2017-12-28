@@ -9,6 +9,7 @@ namespace Olive.View
         public MasterDetail()
         {
             InitializeComponent();
+            this.BindingContext = new ViewModel.vmMasterDetail();
             Detail = new NavigationPage(new HomePage());
         }
 
@@ -20,7 +21,7 @@ namespace Olive.View
 
         void MenuSettings(object sender, EventArgs e)
         {
-            Detail = new NavigationPage(new Settings());
+            Detail = new NavigationPage(new SettingsPage());
             IsPresented = false;
         }
 

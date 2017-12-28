@@ -6,6 +6,7 @@ using Olive.Model;
 using Acr.UserDialogs;
 using System.Text;
 using System.Collections.Generic;
+using Olive.FunzioniComuni;
 
 namespace Olive.ViewModel
 {
@@ -26,9 +27,6 @@ namespace Olive.ViewModel
             }
         }
         
-
-
-
         public String username;
         public String Username
         {
@@ -171,8 +169,19 @@ namespace Olive.ViewModel
             }
 
         }
+
+
+        public ICommand gotoPage
+        {
+            get
+            {
+                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+            }
+
+
+        }
         #endregion
-        
+
         #region ctor
         public vmSettings()
         {
@@ -205,6 +214,7 @@ namespace Olive.ViewModel
             }
         }
         #endregion
+
         public void SaveSet()
         {
             var dati = new Settings();

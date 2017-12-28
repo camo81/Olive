@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.camo.olive" android:installLocation="auto" android:versionCode="1" android:versionName="0.1 beta">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.camo.olive" android:installLocation="auto" android:versionName="0.2 beta" android:versionCode="2">
 	<uses-sdk android:minSdkVersion="15" />
 	<application android:label="Olive.Droid" android:icon="@drawable/icon" android:theme="@style/MyTheme"></application>
 </manifest>

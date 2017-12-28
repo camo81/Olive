@@ -8,9 +8,9 @@ using Xamarin.Forms;
 
 namespace Olive.View
 {
-    public partial class Settings : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public Settings()
+        public SettingsPage()
         {
             InitializeComponent();
             this.BindingContext = new ViewModel.vmSettings();

@@ -152,6 +152,42 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a About.
+        /// </summary>
+        internal static string MasterAbout {
+            get {
+                return ResourceManager.GetString("MasterAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Language.
+        /// </summary>
+        internal static string MasterLanguage {
+            get {
+                return ResourceManager.GetString("MasterLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Main Page.
+        /// </summary>
+        internal static string MasterMain {
+            get {
+                return ResourceManager.GetString("MasterMain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Settings.
+        /// </summary>
+        internal static string MasterSettings {
+            get {
+                return ResourceManager.GetString("MasterSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a No.
         /// </summary>
         internal static string Setting_confirm_no {

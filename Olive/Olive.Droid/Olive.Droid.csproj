@@ -237,6 +237,7 @@
   <ItemGroup>
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="DS\ButtonWithoutShadowRenderer.cs" />
+    <Compile Include="DS\HtmlLabelRenderer.cs" />
     <Compile Include="DS\ISqlLite_android.cs" />
     <Compile Include="DS\Webrequest_android.cs" />
     <Compile Include="MainActivity.cs" />

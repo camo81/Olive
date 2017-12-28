@@ -187,7 +187,11 @@
     <value>Olive app v1.0</value>
   </data>
   <data name="About_text" xml:space="preserve">
-    <value>Olive app è fatta col &lt;3 da Carlo Camagni e Davide Motti. L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da http://gitlab.consortech.it:8080/explore/projects. Siete liberi di scaricarla, modificarla, romperla, abbellirla e  imbruttirla. Grazie a Material Design Icons (https://materialdesignicons.com/) per le icone, Pixabay (https://pixabay.com/it/) e tutta la community di xamarin che ha reso possibile lo sviluppo. E a Olivia, il nome dell' app è dedicato a te. </value>
+    <value>Olive app è fatta da Carlo Camagni e Davide Motti.
+L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da http://gitlab.consortech.it:8080/explore/projects.
+Siete liberi di scaricarla, modificarla, romperla, abbellirla e imbruttirla.
+Grazie a Material Design Icons (https://materialdesignicons.com/) per le icone, Pixabay (https://pixabay.com/it/) per lo sfondo del menù, Smashicons di Flaticon (https://www.flaticon.com/authors/smashicons) per l'app icon.
+E a mia figlia Olivia, questo lavoro è dedicato a te. &lt;3</value>
   </data>
   <data name="MasterAbout" xml:space="preserve">
     <value>About</value>

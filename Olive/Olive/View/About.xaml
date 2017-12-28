@@ -2,16 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Olive.View.About">
-  <ContentPage.ToolbarItems>
-    <ToolbarItem Icon="ic_check_white_36dp.png" Command="{Binding SaveSettings}"/>
-  </ContentPage.ToolbarItems>
 
   <ScrollView Style="{StaticResource MasterDetailSVMain}">
-    <StackLayout>
-      <StackLayout Style="{StaticResource MasterDetailSLMain}">
-        <Label Text="{Binding AboutHeading}" VerticalOptions="Center" HorizontalOptions="Center" Font="Bold,20"  />
-        <Label Text="{Binding AboutText}" VerticalOptions="Center" HorizontalOptions="Center" />
+      <StackLayout>
+        <StackLayout WidthRequest ="250" HorizontalOptions="Center">
+          <Image Source="icon.png"></Image>
+        </StackLayout>
+        <StackLayout Style="{StaticResource MasterDetailSLMain}">
+          <Label Text="{Binding AboutHeading}" VerticalOptions="Center" HorizontalOptions="Center" Font="Bold,20"  />
+          <Label Text="{Binding AboutText}" VerticalOptions="Center" HorizontalOptions="Center" />
+        </StackLayout>
       </StackLayout>
-    </StackLayout>
   </ScrollView>
 </ContentPage>

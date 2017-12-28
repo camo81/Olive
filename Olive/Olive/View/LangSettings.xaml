@@ -7,19 +7,17 @@
     <ToolbarItem Name="About" Order="Secondary" Priority="0" Command="{Binding gotoPage}" />
   </ContentPage.ToolbarItems>
   <ScrollView Style="{StaticResource MasterDetailSVMain}">
-    <StackLayout>
-    <StackLayout Style="{StaticResource MasterDetailSLMain}">
-      <Picker x:Name="Langselection" HorizontalOptions="FillAndExpand" 
-              Title="{Binding pickerTitle}" ItemsSource="{Binding Lingue}" ItemDisplayBinding="{Binding languageName}"
-              SelectedItem="{Binding LangSelected}"
-              Style="{StaticResource LanguagePicker}">
-      </Picker>
-      <!-- <Label Text="{Binding LangSelected.langCode}" /> -->
-      <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />
-      <!-- <Button x:Name = "buttonIns" Text="{Binding saveButton}" Command="{Binding SaveLanguage}" Style="{StaticResource buttonStyle}" />-->
-      
-    </StackLayout>
-
-    </StackLayout>
+      <StackLayout>
+      <StackLayout Style="{StaticResource MasterDetailSLMain}">
+        <Picker x:Name="Langselection" HorizontalOptions="FillAndExpand" 
+                Title="{Binding pickerTitle}" ItemsSource="{Binding Lingue}" ItemDisplayBinding="{Binding languageName}"
+                SelectedItem="{Binding LangSelected}"
+                Style="{StaticResource LanguagePicker}">
+        </Picker>
+        <!-- <Label Text="{Binding LangSelected.langCode}" /> -->
+        <Label TextColor="#77d065" FontSize = "20" Text="{ Binding OpStatus }" />
+        <!-- <Button x:Name = "buttonIns" Text="{Binding saveButton}" Command="{Binding SaveLanguage}" Style="{StaticResource buttonStyle}" />-->    
+      </StackLayout>
+      </StackLayout>
   </ScrollView>
 </ContentPage>

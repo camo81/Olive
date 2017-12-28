@@ -71,7 +71,11 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a some text.
+        ///   Cerca una stringa localizzata simile a Olive app, made by Carlo Camagni &amp; Davide Motti.
+        ///Olive is developed in C# and Xamarin, for source code visit http://gitlab.consortech.it:8080/explore/projects.
+        ///You are free to download, modify, destroy or improve it.
+        ///Thanks to Material Design Icons (https://materialdesignicons.com/) for in app icons, Pixabay (https://pixabay.com/it/) for menu background, Smashicons on Flaticon (https://www.flaticon.com/authors/smashicons) for the app icon.
+        ///And to my daughter Olivia, this app is for you &lt;3..
         /// </summary>
         internal static string About_text {
             get {

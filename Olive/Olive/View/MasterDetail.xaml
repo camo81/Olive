@@ -4,14 +4,14 @@
   <MasterDetailPage.Master>
     <ContentPage BackgroundColor="#fff" Title="MasterPage" xmlns:customs="clr-namespace:Olive.Model;assembly=Olive">
       <ContentPage.Content>
-        <StackLayout> 
+        <StackLayout HorizontalOptions="FillAndExpand"> 
           <StackLayout Style ="{StaticResource MasterDetailSL1}">
             <RelativeLayout>
             <Image Source="menuBackground.jpg" Aspect="Fill" />
             <Label Text="Olive" Style ="{StaticResource MasterDetailLb1}"/>
             </RelativeLayout>
           </StackLayout>       
-          <StackLayout >
+          <StackLayout HorizontalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
               <Image Source="ic_home_grey600_18dp.png" />
               <customs:ButtonWithoutShadow Text="{ Binding MenuMain }" Clicked="MenuHomePage"  Style="{StaticResource MasterDetailButton}"></customs:ButtonWithoutShadow>

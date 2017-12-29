@@ -72,7 +72,7 @@ namespace Olive.Model {
         
         /// <summary>
         ///   Cerca una stringa localizzata simile a Olive app, made by Carlo Camagni &amp; Davide Motti.
-        ///Olive is developed in C# and Xamarin, for source code visit http://gitlab.consortech.it:8080/explore/projects.
+        ///Olive is developed in C# and Xamarin, for source code visit https://github.com/camo81/Olive.
         ///You are free to download, modify, destroy or improve it.
         ///Thanks to Material Design Icons (https://materialdesignicons.com/) for in app icons, Pixabay (https://pixabay.com/it/) for menu background, Smashicons on Flaticon (https://www.flaticon.com/authors/smashicons) for the app icon.
         ///And to my daughter Olivia, this app is for you &lt;3..
@@ -84,7 +84,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a http://gitlab.consortech.it:8080/camo/Olive.
+        ///   Cerca una stringa localizzata simile a https://github.com/camo81/Olive.
         /// </summary>
         internal static string General_GitUri {
             get {

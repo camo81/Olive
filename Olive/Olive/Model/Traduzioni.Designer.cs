@@ -147,7 +147,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Making some stuff... | Round one, fight!.
+        ///   Cerca una stringa localizzata simile a Making some stuff... | Round one, fight! |Tthese aren&apos;t the droids you&apos;re looking for | That is why you fail.|Adventure. Excitement. A Jedi craves not these things|Wars not make one great. | Do. Or do not. There is no try.| Always two there are, no more, no less. A master and an apprentice.|You fail because you don’t believe..
         /// </summary>
         internal static string Loading_message {
             get {

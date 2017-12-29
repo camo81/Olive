@@ -23,6 +23,7 @@ namespace Olive.View
         {
             Detail = new NavigationPage(new SettingsPage());
             IsPresented = false;
+
         }
 
         void MenuLanguage(object sender, EventArgs e)

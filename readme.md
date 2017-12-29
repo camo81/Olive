@@ -1,7 +1,7 @@
 # Olive app #
 
 Olive app è fatta da Carlo Camagni e Davide Motti.
-L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da http://gitlab.consortech.it:8080/explore/projects.
+L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da https://github.com/camo81/Olive.
 Siete liberi di scaricarla, modificarla, romperla, abbellirla e imbruttirla.
 Grazie a Material Design Icons (https://materialdesignicons.com/) per le icone, Pixabay (https://pixabay.com/it/) per lo sfondo del menù, Smashicons di Flaticon (https://www.flaticon.com/authors/smashicons) per l'app icon.
 E a mia figlia Olivia, questo lavoro è dedicato a te. <3

@@ -84,6 +84,15 @@ namespace Olive.Model {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a http://gitlab.consortech.it:8080/camo/Olive.
+        /// </summary>
+        internal static string General_GitUri {
+            get {
+                return ResourceManager.GetString("General_GitUri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Open.
         /// </summary>
         internal static string HomePage_Button1 {

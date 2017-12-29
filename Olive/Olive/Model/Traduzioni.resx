@@ -205,4 +205,7 @@ And to my daughter Olivia, this app is for you &lt;3.</value>
   <data name="MasterSettings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="General_GitUri" xml:space="preserve">
+    <value>http://gitlab.consortech.it:8080/camo/Olive</value>
+  </data>
 </root>

@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Olive.Model;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Command;
+using Xamarin.Forms;
 
 namespace Olive.ViewModel
 {
@@ -33,9 +36,27 @@ namespace Olive.ViewModel
                 Set(nameof(AboutText), ref value);
             }
         }
+
+        public ICommand CommandOpenUrl
+        {
+            get
+            {
+                return new RelayCommand(() => { OpenUrl(); });
+            }
+
+        }
+        
+
         public vmAbout()
         {
 
+        }
+
+        public void OpenUrl() {
+            var url = Traduzioni.General_GitUri;
+            Uri uri = new Uri(url);
+
+            Device.OpenUri(uri);
         }
     }
 }

@@ -11,11 +11,12 @@ namespace Olive.FunzioniComuni
     public static class funzioniComuni
     {
 
-        public static void changePage(Page page) {
 
-            MasterDetailPage about = App.Current.MainPage as MasterDetailPage;
-            about.Detail = new NavigationPage(page);
-            about.IsPresented = false;
+        public static void changePage(Page page)
+        {
+            MasterDetailPage newPage = App.Current.MainPage as MasterDetailPage;
+            newPage.Detail = new NavigationPage(page);
+            newPage.IsPresented = false;
 
         }
 

@@ -12,6 +12,41 @@
             </RelativeLayout>
           </StackLayout>       
           <StackLayout HorizontalOptions="FillAndExpand">
+            
+          <ScrollView>        
+            <StackLayout HorizontalOptions="FillAndExpand" Style ="{StaticResource MasterDetailSL3}">   
+            
+            <StackLayout Orientation="Horizontal">
+              <Image Source="ic_home_grey600_24dp.png"></Image>
+              <Label Text="{Binding MenuMain}" Style ="{StaticResource MasterDetailLb2}">
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding gotoPage}" NumberOfTapsRequired="1" CommandParameter="{Binding mainPage}" />
+              </Label.GestureRecognizers>
+              </Label>                        
+            </StackLayout>              
+              
+            <StackLayout Orientation="Horizontal">
+              <Image Source="ic_settings_grey600_24dp.png"></Image>
+              <Label Text="{Binding MenuSettings}" Style ="{StaticResource MasterDetailLb2}">
+                <Label.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding gotoPage}" NumberOfTapsRequired="1" CommandParameter="{Binding settingsPage}" />
+                </Label.GestureRecognizers>
+              </Label>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+              <Image Source="ic_web_grey600_24dp.png"></Image>
+              <Label Text="{Binding MenuLang}" Style ="{StaticResource MasterDetailLb2}">
+                <Label.GestureRecognizers>
+                  <TapGestureRecognizer Command="{Binding gotoPage}" NumberOfTapsRequired="1" CommandParameter="{Binding languagePage}" />
+                </Label.GestureRecognizers>
+              </Label>
+            </StackLayout>            
+           </StackLayout>  
+           </ScrollView>     
+              
+            
+    <!--     
             <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
               <Image Source="ic_home_grey600_18dp.png" />
               <customs:ButtonWithoutShadow Text="{ Binding MenuMain }" Clicked="MenuHomePage"  Style="{StaticResource MasterDetailButton}"></customs:ButtonWithoutShadow>
@@ -27,7 +62,9 @@
             <StackLayout Orientation="Horizontal" Style ="{StaticResource MasterDetailSL2}">
               <Image Source="ic_information_grey600_18dp.png" />
               <customs:ButtonWithoutShadow Text="{ Binding MenuAbout }" Clicked="MenuAbout"  Style="{StaticResource MasterDetailButton}"></customs:ButtonWithoutShadow>
-            </StackLayout>            
+            </StackLayout>  
+          
+        -->
            </StackLayout>
         </StackLayout>  
       </ContentPage.Content>

@@ -1,4 +1,4 @@
-# Olive#
+# Olive #
 
 Olive (https://play.google.com/store/apps/details?id=com.camo.olive) è fatta da Carlo Camagni e Davide Motti.
 L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da https://github.com/camo81/Olive.
@@ -17,7 +17,7 @@ Olive è sviluppata per interrogare via web una webcam mobotix con interfaccia p
 Permette di azionare il relè eventualmente collegato alla prima uscita della cam, quella appositamente creata per azionare il cancello.
 Future release implementeranno (forse) gli altri 3 relè presenti sulla cam.
 
-## To Do##
+## To Do ##
 
 - Implementazione degli altri 3 comandi
 

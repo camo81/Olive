@@ -59,7 +59,7 @@ namespace Olive.ViewModel
         {
             get
             {
-                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+                return new RelayCommand(() => { funzioniComuni.pageAsync(new View.About()); });
             }
 
 
@@ -125,21 +125,24 @@ namespace Olive.ViewModel
         public bool SaveLang() {
 
             var lingua = new Language();
-            lingua.LangCode = LangSelected.langCode;
-            lingua.LanguageName = LangSelected.languageName;
-            var op = 0;
-            ManageData.delLanguage();
-            try
+            if (LangSelected != null)
             {
-                op = ManageData.InsertLanguage(lingua);
-                Acr.UserDialogs.UserDialogs.Instance.ShowSuccess("");
-                var linguaCorrente = new System.Globalization.CultureInfo(lingua.LangCode);
-                Traduzioni.Culture = linguaCorrente;
-            }
-            catch (Exception e)
-            {
+                lingua.LangCode = LangSelected.langCode;
+                lingua.LanguageName = LangSelected.languageName;
+                var op = 0;
+                ManageData.delLanguage();
+                try
+                {
+                    op = ManageData.InsertLanguage(lingua);
+                    Acr.UserDialogs.UserDialogs.Instance.ShowSuccess("");
+                    var linguaCorrente = new System.Globalization.CultureInfo(lingua.LangCode);
+                    Traduzioni.Culture = linguaCorrente;
+                }
+                catch (Exception e)
+                {
 
-                
+                }
+            
             }
 
             return true;

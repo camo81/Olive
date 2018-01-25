@@ -7,7 +7,7 @@
         <StackLayout HorizontalOptions="FillAndExpand"> 
           <StackLayout Style ="{StaticResource MasterDetailSL1}">
             <RelativeLayout>
-            <Image Source="menuBackground.jpg" Aspect="Fill" />
+            <Image Source="new_bckg.png" Aspect="Fill" />
             <Label Text="Olive" Style ="{StaticResource MasterDetailLb1}"/>
             </RelativeLayout>
           </StackLayout>       

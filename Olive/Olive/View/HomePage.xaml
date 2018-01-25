@@ -13,7 +13,7 @@
         <StackLayout Style="{StaticResource MasterDetailSLMain}">
           <Label Text="{ Binding ButtonActionText }" Style="{StaticResource DescriptionLabel}" >
           </Label>
-          <customs:ButtonWithoutShadow x:homeButton = "button2" Image="ic_gate_white_24dp.png" Command="{Binding CommandSendAction}" Style="{StaticResource buttonOnlyIcon}" />
+          <customs:ButtonWithoutShadow x:homeButton = "button2" Image="ic_logout_variant_white_36dp.png" Command="{Binding CommandSendAction}" Style="{StaticResource buttonOnlyIcon}" />
         </StackLayout>
       </StackLayout>
   </ScrollView>

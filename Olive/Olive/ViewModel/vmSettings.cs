@@ -175,7 +175,7 @@ namespace Olive.ViewModel
         {
             get
             {
-                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+                return new RelayCommand(() => { funzioniComuni.pageAsync(new View.About()); });
             }
 
 

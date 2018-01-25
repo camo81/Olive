@@ -58,7 +58,7 @@ namespace Olive.ViewModel
         {
             get
             {
-                return new RelayCommand(() => { funzioniComuni.changePage(new View.About()); });
+                return new RelayCommand(() => { funzioniComuni.pageAsync(new View.About()); });
             }
 
 
@@ -117,19 +117,10 @@ namespace Olive.ViewModel
             runTask();
              
         }
-
-        public string idiotMessage() {
-            var messages = Traduzioni.Loading_message;
-            string[] messageList = messages.Split('|');
-            var rnd = new Random();
-            var message = messageList[rnd.Next(0, messageList.Length)];
-
-            return message;
-        }
-
+       
         public async void runTask()
         {
-            string message = idiotMessage();
+            string message = funzioniComuni.idiotMessage();
 
             UserDialogs.Instance.ShowLoading(message, MaskType.Black);
 

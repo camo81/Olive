@@ -23,7 +23,7 @@ namespace Olive.Droid.DS
                 string[] IpAddressClean = IpAddress.Split('/');
                 int i = 0;
                 i = i + 1;
-                PingReply reply = ping.Send(IpAddressClean[2]);
+                PingReply reply = ping.Send(IpAddressClean[2],3000);
                 IPA = IpAddress;
             }
             catch (Exception e)

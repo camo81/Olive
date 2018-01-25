@@ -1,6 +1,6 @@
-# Olive app #
+# Olive#
 
-Olive app è fatta da Carlo Camagni e Davide Motti.
+Olive (https://play.google.com/store/apps/details?id=com.camo.olive) è fatta da Carlo Camagni e Davide Motti.
 L'applicazione è sviluppata in C# tramite Xamarin ed il codice è liberamente scaricabile da https://github.com/camo81/Olive.
 Siete liberi di scaricarla, modificarla, romperla, abbellirla e imbruttirla.
 Grazie a Material Design Icons (https://materialdesignicons.com/) per le icone, Pixabay (https://pixabay.com/it/) per lo sfondo del menù, Smashicons di Flaticon (https://www.flaticon.com/authors/smashicons) per l'app icon.

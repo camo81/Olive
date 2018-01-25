@@ -15,6 +15,29 @@ namespace Olive.ViewModel
 
         #region binding 
 
+        private bool isselected = true;
+        public bool isSelected
+        {
+            get { return isselected; }
+            set
+            {
+                isselected = value;
+                Set(nameof(isSelected), ref value);
+
+            }
+        }
+
+        private String switchtext = Traduzioni.Settings_sound;
+        public String switchText
+        {
+            get { return switchtext; }
+            set
+            {
+                switchtext = value;
+                Set(nameof(switchText), ref value);
+
+            }
+        }
 
         public string description = Traduzioni.Settings_Description;
         public String Description
@@ -212,6 +235,21 @@ namespace Olive.ViewModel
             {
                 IpAddressExt = tmp.SettingValue;
             }
+
+            try
+            {
+                var i = ManageData.getValue("PlaySound");
+                if (i.SettingValue == "False")
+                {
+                    isSelected = false;
+                }
+
+            }
+            catch (Exception e)
+            {
+    
+
+            }
         }
         #endregion
 
@@ -285,6 +323,30 @@ namespace Olive.ViewModel
             AddressInt.SettingName = "IpAddress";
             //AddressInt.IdSetting = 2;
             multi.Add(AddressInt);
+
+            
+            //set della variabile isSelected
+            dati.SettingName = "PlaySound";
+
+            dati.SettingValue = isSelected.ToString();
+            var tmp2 = ManageData.getValue("PlaySound");
+            if ((tmp2 == null))
+            {
+                // se non esiste faccio l'insert
+                try
+                {
+                    var play = ManageData.InsertSettings(dati);
+                }
+                catch (Exception e)
+                {
+                    
+                }
+            }
+            else
+            {
+                dati.IdSetting = tmp2.IdSetting;
+                var play = ManageData.UpdateSettings(dati);
+            }
 
             var MultiSave = MultiValidateAndSave(multi);
 
@@ -381,10 +443,10 @@ namespace Olive.ViewModel
 
             foreach (var item in dati)
             {
-                bool iss = startWithHttp(item.SettingValue);
+                bool iss = funzioniComuni.startWithHttp(item.SettingValue);
                 var p = string.IsNullOrWhiteSpace(item.SettingValue);
 
-                if ( (lista.Count > 0) && ( (startWithHttp(item.SettingValue)) || ( string.IsNullOrWhiteSpace(item.SettingValue)) ) )
+                if ( (lista.Count > 0) && ( (funzioniComuni.startWithHttp(item.SettingValue)) || ( string.IsNullOrWhiteSpace(item.SettingValue)) ) )
                 {
                     
                     var tmp = ManageData.getValue(item.SettingName);
@@ -423,33 +485,6 @@ namespace Olive.ViewModel
             return Saved;
 
         }
-
-        public bool startWithHttp(string url)
-        {
-
-            if ( (string.IsNullOrWhiteSpace(url)) || (url.Length < 11) )
-            {
-                return false;
-            }
-
-            int startIndex = 0;
-            int length = 7;
-
-            var pippo = url.Substring(startIndex, length).ToLower();
-
-            if ( (url.Substring(startIndex, length).ToLower() == "http://") || (url.Substring(startIndex, length+1).ToLower() == "https://") ) {
-                return true;
-            } else {
-                var text = Traduzioni.Settings_httpvalidation;
-                UserDialogs.Instance.ShowError(text);
-                return false;
-            }
-            
-
-            
-
-        }
-
 
 
     }

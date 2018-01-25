@@ -62,7 +62,7 @@ namespace Olive.Model {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Olive app v1.0.
+        ///   Cerca una stringa localizzata simile a Olive.
         /// </summary>
         internal static string About_heading {
             get {
@@ -305,6 +305,15 @@ namespace Olive.Model {
         internal static string Settings_SaveSettingsText {
             get {
                 return ResourceManager.GetString("Settings_SaveSettingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Play sound.
+        /// </summary>
+        internal static string Settings_sound {
+            get {
+                return ResourceManager.GetString("Settings_sound", resourceCulture);
             }
         }
         

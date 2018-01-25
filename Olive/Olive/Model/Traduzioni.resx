@@ -184,7 +184,7 @@
     <value>Yes</value>
   </data>
   <data name="About_heading" xml:space="preserve">
-    <value>Olive app v1.0</value>
+    <value>Olive</value>
   </data>
   <data name="About_text" xml:space="preserve">
     <value>Olive app, made by Carlo Camagni &amp; Davide Motti.
@@ -207,5 +207,8 @@ And to my daughter Olivia, this app is for you &lt;3.</value>
   </data>
   <data name="General_GitUri" xml:space="preserve">
     <value>https://github.com/camo81/Olive</value>
+  </data>
+  <data name="Settings_sound" xml:space="preserve">
+    <value>Play sound</value>
   </data>
 </root>

@@ -5,7 +5,17 @@
   <Application.Resources>
     <!-- Application resource dictionary -->
     <ResourceDictionary>
-
+      <Style x:Key="MissLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="32" />
+        <Setter Property="FontFamily" Value="IMissYourKiss.ttf#IMissYourKiss" />
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Center" />
+      </Style>     
+      
+      <Style x:Key="DefLabelRoboto" TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto-Regular.ttf#Roboto-Regular" />
+      </Style>
+      
       <Style x:Key="MasterDetailLb2" TargetType="Label">
         <Setter Property="FontSize" Value="17" />
         <Setter Property="Margin" Value="10,5,5,5" />

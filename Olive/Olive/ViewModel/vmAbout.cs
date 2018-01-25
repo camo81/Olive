@@ -1,9 +1,5 @@
 ﻿using GalaSoft.MvvmLight;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Olive.Model;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.Command;

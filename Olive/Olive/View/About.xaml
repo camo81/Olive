@@ -10,10 +10,13 @@
           <Image Source="icon.png"></Image>
         </StackLayout>
         <StackLayout Style="{StaticResource MasterDetailSLMain}">
-          <Label Text="{Binding AboutHeading}" VerticalOptions="Center" HorizontalOptions="Center" Font="Bold,20"  />
+          <Label Text="{Binding AboutHeading}" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource MissLabel}" />
           <Label Text="{Binding AboutText}" VerticalOptions="Center" HorizontalOptions="Center" />
-          <customs:ButtonWithoutShadow x:homeButton = "button2" Image="ic_github_circle_white_36dp.png" Command="{Binding CommandOpenUrl}" Style="{StaticResource buttonOnlyIcon}" />
-        </StackLayout>
+          <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" >
+          <Label Text="Fork me on" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource MissLabel}"/>
+            <customs:ButtonWithoutShadow x:homeButton = "button2" Image="ic_github_circle_white_36dp.png" Command="{Binding CommandOpenUrl}" Style="{StaticResource buttonOnlyIcon}" />
+          </StackLayout>
+          </StackLayout>
       </StackLayout>
   </ScrollView>
 </ContentPage>

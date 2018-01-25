@@ -10,7 +10,21 @@
 
   <ScrollView Style="{StaticResource MasterDetailSVMain}">
     <StackLayout>
+                  
           <StackLayout Style="{StaticResource MasterDetailSLMain}">
+
+            <StackLayout Orientation="Horizontal">
+              <Label Text="{Binding switchText}"
+                    HorizontalOptions="StartAndExpand"
+                    HorizontalTextAlignment="Start"
+                    VerticalOptions="Center"
+                    Style="{StaticResource DefLabelRoboto}"/>
+
+              <Switch VerticalOptions="Center"
+                    HorizontalOptions="EndAndExpand"
+                    IsToggled="{Binding isSelected}"/>
+            </StackLayout>
+            
             <Label Text="{ Binding Description }" Style="{StaticResource DescriptionLabel}" />
             <StackLayout Orientation="Horizontal">
               <Image Source="ic_account_grey600_24dp.png"/>

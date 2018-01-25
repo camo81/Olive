@@ -11,6 +11,7 @@ using Acr.UserDialogs;
 using System.Net;
 using Plugin.Connectivity;
 using Olive.FunzioniComuni;
+using Xamarin.Forms;
 
 namespace Olive.ViewModel
 {
@@ -145,11 +146,13 @@ namespace Olive.ViewModel
 
                     UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.ShowSuccess("" + text);
+                    DependencyService.Get<IAudio>().PlayAudioFile("pop.mp3");
                 }
                 else
                 {
                     UserDialogs.Instance.HideLoading();
                     UserDialogs.Instance.ShowError(Traduzioni.HomePage_dnsError);
+                    DependencyService.Get<IAudio>().PlayAudioFile("error.mp3");
                 }
 
 

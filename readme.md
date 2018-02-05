@@ -21,7 +21,3 @@ Future release implementeranno (forse) gli altri 3 relè presenti sulla cam.
 
 - Implementazione degli altri 3 comandi
 
-## Bug Conosciuti ##
-
-- Le entry nella pagina settings non si adattano al layout tablet.
-- I bottoni del menù non occupano tutta la larghezza della pagina e vanno quindi tappato sulla scrtta.
